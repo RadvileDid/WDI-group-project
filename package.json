@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "bower install && gulp deploy"
   },
-  "author": "put group memeber names here",
+  "author": "Radvile, Hannah, Otis",
   "license": "ISC",
   "gulp": {
     "srcDir": "src/",
@@ -50,9 +50,11 @@
     }
   },
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "bluebird": "^3.5.1",
     "body-parser": "^1.13.2",
     "express": "^4.14.0",
+    "jsonwebtoken": "^8.1.1",
     "mongoose": "^5.0.1",
     "morgan": "~1.6.1"
   },
@@ -61,6 +63,7 @@
     "babel-preset-es2015": "^6.18.0",
     "bower": "^1.8.0",
     "browser-sync": "^2.17.6",
+    "chai": "^4.1.2",
     "event-stream": "^3.3.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -88,6 +91,8 @@
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
     "main-bower-files": "^2.13.1",
-    "require-dir": "^0.3.1"
+    "mocha": "^5.0.0",
+    "require-dir": "^0.3.1",
+    "supertest": "^3.0.0"
   }
 }
