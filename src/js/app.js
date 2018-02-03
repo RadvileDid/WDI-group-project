@@ -1,5 +1,6 @@
 angular
   .module('vamApp', [
     'ui.router',
-    'ngResource'
+    'ngResource',
+    'satellizer'
   ]);
