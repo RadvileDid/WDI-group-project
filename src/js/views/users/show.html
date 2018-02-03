@@ -1,0 +1,9 @@
+<section>
+<h1>{{ vm.user.username }}</h1>
+
+<div>
+  <button ui-sref="usersEdit({ id: vm.user.id })">Edit Profile</button>
+  <button ng-click="vm.userDelete()">Delete Profile</button>
+</div>
+
+</section>
