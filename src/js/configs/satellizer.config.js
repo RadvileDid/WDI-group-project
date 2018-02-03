@@ -1,5 +1,5 @@
 angular
-  .module('birdApp')
+  .module('vamApp')
   .config(Auth);
 
 Auth.$inject = [ '$authProvider' ];

@@ -6,6 +6,9 @@ function register(req, res, next) {
   User
     .create(req.body)
     .then(() => res.json({ message: 'Registration successful'}))
+    .then( () => {
+      console.log('registered');
+    })
     .catch(next);
 }
 
@@ -17,6 +20,9 @@ function login(req, res, next) {
 
       const token = jwt.sign({ userId: user.id }, secret, { expiresIn: '1hr' });
       return res.json({ token, message: `Welcome back ${user.username}` });
+    })
+    .then( () => {
+      console.log('logged in');
     })
     .catch(next);
 }
