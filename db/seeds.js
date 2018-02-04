@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const devDB = require('../config/environment'); //dev db needs to be the db "development" from the environment.js file. I am not sure how to direct it there but I will work on that now.
+const { db } = require('../config/environment'); //dev db needs to be the db "development" from the environment.js file. I am not sure how to direct it there but I will work on that now.
 
 mongoose.Promise = require('bluebird');
-mongoose.connect(devDB);
+mongoose.connect(db);
 
 const Group = require('../models/group');
 const User = require('../models/user');
@@ -17,7 +17,7 @@ User
     password: 'password',
     passwordConfirmation: 'password'
   }, {
-    username: 'otis',
+    username: 'rad',
     email: 'rad@ga.co',
     password: 'password',
     passwordConfirmation: 'password'
