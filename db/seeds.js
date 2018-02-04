@@ -9,3 +9,28 @@ const User = require('../models/user');
 
 Group.collection.drop();
 User.collection.drop();
+
+User
+  .create([{
+    username: 'otis',
+    email: 'otis@ga.co',
+    password: 'password',
+    passwordConfirmation: 'password'
+  }, {
+    username: 'otis',
+    email: 'rad@ga.co',
+    password: 'password',
+    passwordConfirmation: 'password'
+  }, {
+    username: 'hannah',
+    email: 'hannah@ga.co',
+    password: 'password',
+    passwordConfirmation: 'password'
+  }])
+  .then((users) => {
+    console.log(`${users.length} users created`);
+  })
+  .finally(() => {
+    return mongoose.connection.close();
+  })
+  .catch(err => console.log(err));
