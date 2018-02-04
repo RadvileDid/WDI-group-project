@@ -15,7 +15,7 @@ function UsersShowCtrl($state, UserFactory) {
       .delete($state.params)
       .$promise
       .then(() => {
-        $state.go('SOMEWHERE'); // where do we want the user to go once their profile has been deleted? from router config
+        $state.go('moviesIndex'); // where do we want the user to go once their profile has been deleted? from router config
       });
   }
 }
