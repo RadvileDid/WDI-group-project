@@ -17,7 +17,7 @@ User
     password: 'password',
     passwordConfirmation: 'password'
   }, {
-    username: 'otis',
+    username: 'rad',
     email: 'rad@ga.co',
     password: 'password',
     passwordConfirmation: 'password'

@@ -11,7 +11,6 @@ function usersShow(req, res, next) {
     .catch(next);
 }
 
-
 function usersUpdate(req, res, next) {
   User
     .findByIdAndUpdate(req.params.id, req.body, { new: true })
