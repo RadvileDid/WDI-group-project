@@ -6,8 +6,8 @@
   </div>
   <div>
 
-    <button ui-sref="usersEdit({ id: vm.user.id })">Edit Profile</button>
-    <button ng-click="vm.userDelete()">Delete Profile</button>
+    <button ui-sref="usersEdit({ id: vm.user.id })" ng-if="main.isAuthenticated()">Edit Profile</button>
+    <button ng-click="vm.userDelete()" ng-if="main.isAuthenticated()">Delete Profile</button>
 
   </div>
 
