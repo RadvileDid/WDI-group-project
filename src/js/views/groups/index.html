@@ -1,6 +1,9 @@
 
 
-<!-- <input type="text" class="search" ng-model="vm.query" placeholder="Search..."> -->
+<form ng-submit="vm.findMovie()">
+  <input ng-model="vm.search">
+  <button type="submit" name="button">find a movie</button>
+</form>
 <div ng-repeat="group in vm.all">
 <h2>{{ group.title }}</h2>
 <img ng-src="https://image.tmdb.org/t/p/w500/{{ group.poster_path}}" alt="">
