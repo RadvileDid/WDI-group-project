@@ -1,0 +1,11 @@
+<section>
+<div ng-repeat="user in vm.all">
+  <h1><a ui-sref="usersShow({ id: user.id })">{{ user.username }}</a></h1>
+  <img ng-src="{{ user.profilePicture }}">
+  <h2>{{ user.quote }}</h2>
+  <h3>{{ user.genre}}</h3>
+
+</div>
+
+
+</section>

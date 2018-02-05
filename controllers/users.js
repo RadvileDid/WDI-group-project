@@ -1,6 +1,14 @@
 const User = require('../models/user');
 
-function usersShow(req, res, next) {
+function usersIndexRoute(req, res, next) {
+  User
+    .find()
+    .exec()
+    .then((users) => res.json(users))
+    .catch(next);
+}
+
+function usersShowRoute(req, res, next) {
   User
     .findById(req.params.id)
     .exec()
@@ -11,7 +19,7 @@ function usersShow(req, res, next) {
     .catch(next);
 }
 
-function usersUpdate(req, res, next) {
+function usersUpdateRoute(req, res, next) {
   User
     .findByIdAndUpdate(req.params.id, req.body, { new: true })
     .exec()
@@ -22,7 +30,7 @@ function usersUpdate(req, res, next) {
     .catch(next);
 }
 
-function usersDelete(req, res, next) {
+function usersDeleteRoute(req, res, next) {
   User
     .findByIdAndRemove(req.params.id)
     .exec()
@@ -33,7 +41,8 @@ function usersDelete(req, res, next) {
 }
 
 module.exports = {
-  show: usersShow,
-  update: usersUpdate,
-  delete: usersDelete
+  show: usersShowRoute,
+  update: usersUpdateRoute,
+  delete: usersDeleteRoute,
+  index: usersIndexRoute
 };
