@@ -35,6 +35,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/groups',
       templateUrl: '/js/views/groups/index.html',
       controller: 'GroupsIndexCtrl as vm'
+    })
+    .state('groupsShow', {
+      url: '/groups/:id',
+      templateUrl: '/js/views/groups/show.html',
+      controller: 'GroupsShowCtrl as vm'
     });
 
 
