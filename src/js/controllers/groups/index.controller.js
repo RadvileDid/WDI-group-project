@@ -8,7 +8,7 @@ function GroupIndexCtrl($http) {
   const vm = this;
 
   $http
-    .get('https://api.punkapi.com/v2/beers')
+    .get('')
     .then(res => {
       console.log(res);
       vm.all = res.data;
@@ -16,3 +16,7 @@ function GroupIndexCtrl($http) {
 
 
 }
+
+
+// i need to find out about the queries
+// then push them through to the front end
