@@ -8,9 +8,9 @@ function GroupsIndexCtrl($http) {
   const vm = this;
 
   $http
-    .get('/api/index')
+    .get('http://localhost:7000/api/groups')
     .then(res => {
-      console.log(res);
+      console.log(res.data);
       vm.all = res.data;
     });
 

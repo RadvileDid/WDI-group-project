@@ -1,16 +1,16 @@
 const Group = require('../models/group');
 
-function groupsShow(req, res, next) {
+function groupsIndex(req, res, next) {
   Group
-    .findById(req.params.id)
+    .find()
     .exec()
-    .then(group => {
-      if (!group) return res.notFound();
-      return res.status(200).json(group);
+    .then(groups => {
+      if (!groups) return res.notFound();
+      return res.status(200).json(groups);
     })
     .catch(next);
 }
 
 module.exports = {
-  show: groupsShow
+  index: groupsIndex
 };

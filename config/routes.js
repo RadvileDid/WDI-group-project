@@ -3,7 +3,7 @@ const router  = express.Router();
 const auth = require('../controllers/auth');
 const users = require('../controllers/users');
 const groups = require('../controllers/groups');
-const secureRoute = require('../lib/secureRoute');
+// const secureRoute = require('../lib/secureRoute');
 
 // Routes go here
 router.route('/register')
@@ -17,7 +17,7 @@ router.route('/users/:id')
   .put(users.update)
   .delete(users.delete);
 
-router.route('/index')
-  .get(groups.show);
+router.route('/groups')
+  .get(groups.index);
 
 module.exports = router;
