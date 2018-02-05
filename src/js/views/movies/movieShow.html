@@ -1,4 +1,9 @@
-
-
-<h1>movie show - test</h1>
-<p>this is title: {{ group.title }}</p>
+<div ng-controller="MovieCtrl">
+  <h1>movie show - test</h1>
+  <img ng-src="https://image.tmdb.org/t/p/w500/{{ group.poster_path}}" alt="">
+  <p>this is title: {{vm.all.title}}</p>
+  <p>this is overview: {{vm.all.overview}}</p>
+  <p>this is overview: {{vm.vote_average}}</p>
+  <p>this is release date: {{release_date
+  }}</p>
+</div>

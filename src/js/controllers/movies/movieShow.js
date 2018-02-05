@@ -9,10 +9,8 @@ function MovieCtrl($http, $state) {
   const vm = this;
 
   $http
-    .get(`https://api.themoviedb.org/3/movie/${$state.params}?api_key=${apiKey}`)
+    .get(`https://api.themoviedb.org/3/movie/${$state.params.id}?api_key=${apiKey}`)
     .then(res => {
-      // console.log(res.data.results);
-      console.log($state.params.id);
-      vm.all = res.data.results;
+      vm.all = res;
     });
 }
