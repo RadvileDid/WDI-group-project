@@ -5,7 +5,7 @@ mongoose.Promise = require('bluebird');
 mongoose.connect(db[env]);
 
 const Group = require('../models/group');
-const User = require('../models/user');
+const User  = require('../models/user');
 
 Group.collection.drop();
 User.collection.drop();
@@ -38,7 +38,7 @@ User
   }])
   .then((users) => {
     console.log(`${users.length} users created`);
-    Group
+    return Group
       .create([{
         users: [users[0], users[1], users[2]],
         movie: {
@@ -57,10 +57,10 @@ User
           title: 'Donnie Darko',
           image: 'https://s3-ap-southeast-2.amazonaws.com/fna-wordpress-website06/wp-content/uploads/2016/10/25214623/Donnie-Darko-Directors-Cut-960x1440-Portrate.jpg'
         }
-      }])
-      .then((groups) => {
-        console.log(`${groups.length} groups created`);
-      });
+      }]);
+  })
+  .then((groups) => {
+    console.log(`${groups.length} groups created`);
   })
   .finally(() => {
     return mongoose.connection.close();
