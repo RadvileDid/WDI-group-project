@@ -1,4 +1,7 @@
+
+
+
 <div ng-repeat="group in vm.all">
-  <h2 class="title">{{ original_title }}</h2>
-  <img ng-src="{{ group.movie.image }}">
+<h2>{{ group.title }}</h2>
+<img ng-src="https://image.tmdb.org/t/p/w500/{{ group.poster_path}}" alt="">
 </div>
