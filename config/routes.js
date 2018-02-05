@@ -9,7 +9,7 @@ router.route('/register')
   .post(auth.register);
 
 router.route('/login')
-  .post(auth.login); 
+  .post(auth.login);
 
 router.route('/users/:id')
   .get(users.show)
