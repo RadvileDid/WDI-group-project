@@ -6,7 +6,6 @@ GroupsShowCtrl.$inject = ['$state', '$http'];
 function GroupsShowCtrl($state, $http) {
   const vm = this;
 
-
   $http
     .get(`/api/groups/${$state.params.id}`)
     .then((response) => {

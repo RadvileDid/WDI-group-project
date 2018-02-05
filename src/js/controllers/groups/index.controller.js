@@ -2,11 +2,11 @@ angular
   .module('vamApp')
   .controller('GroupsIndexCtrl', GroupsIndexCtrl);
 
-GroupsIndexCtrl.$inject = ['$http', '$scope', 'filterFilter'];
-function GroupsIndexCtrl($http, $scope, filterFilter) {
+GroupsIndexCtrl.$inject = ['$http'];
+function GroupsIndexCtrl($http) {
   const apiKey = '1d4fa77475568ca9a63fb4a287dd496b';
   const query = 'neverending%20story';
-  //  brewdog and coffee
+
   const vm = this;
 
   $http
@@ -15,19 +15,6 @@ function GroupsIndexCtrl($http, $scope, filterFilter) {
       console.log(res.data.results);
       vm.all = res.data.results;
     });
-
-  vm.all = Group.query();
-
-  function filterGroup() {
-    const params = { name: vm.query };
-    vm.filtered = filterFilter(vm.all, params);
-  }
-
-  $scope.$watchGroup([
-    () => vm.query
-  ], filterGroup);
-
-  vm.filterGroup = filterGroup;
 
 }
 
