@@ -4,11 +4,12 @@ angular
 
 GroupsIndexCtrl.$inject = ['$http'];
 function GroupsIndexCtrl($http) {
-
+  const apiKey = '1d4fa77475568ca9a63fb4a287dd496b';
+  const query = 'neverending%20story';
   const vm = this;
 
   $http
-    .get('http://localhost:7000/api/groups')
+    .get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}&include_adult=false`)
     .then(res => {
       console.log(res.data);
       vm.all = res.data;

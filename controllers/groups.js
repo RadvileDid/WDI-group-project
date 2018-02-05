@@ -11,6 +11,21 @@ function groupsIndex(req, res, next) {
     .catch(next);
 }
 
+function groupsShow(req, res, next) {
+  Group
+    .findById(req.params.id)
+    // .populate('users') => this needs to be added
+    .exec()
+    .then((group) => {
+      if(!group) return res.notFound();
+      // here we are adding 'group' to the locals object after res.render
+      return res.status(200).json(group);
+    })
+    .catch(next);
+}
+
+
 module.exports = {
-  index: groupsIndex
+  index: groupsIndex,
+  show: groupsShow
 };

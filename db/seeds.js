@@ -62,8 +62,8 @@ Group
       image: 'https://s3-ap-southeast-2.amazonaws.com/fna-wordpress-website06/wp-content/uploads/2016/10/25214623/Donnie-Darko-Directors-Cut-960x1440-Portrate.jpg'
     }
   }])
-  .then((users) => {
-    console.log(`${users.length} users created`);
+  .then((groups) => {
+    console.log(`${groups.length} groups created`);
   })
   .finally(() => {
     return mongoose.connection.close();
