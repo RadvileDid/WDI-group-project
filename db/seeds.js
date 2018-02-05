@@ -12,20 +12,29 @@ User.collection.drop();
 
 User
   .create([{
-    username: 'otis',
+    username: 'Otis',
     email: 'otis@ga.co',
     password: 'password',
-    passwordConfirmation: 'password'
+    passwordConfirmation: 'password',
+    profilePicture: 'http://www.benfarrell.com/wp-content/uploads/2013/03/otto.png',
+    quote: 'I stand on my record. Fifteen crashes and not a single fatality.',
+    genre: 'Comedy'
   }, {
-    username: 'rad',
+    username: 'Rad',
     email: 'rad@ga.co',
     password: 'password',
-    passwordConfirmation: 'password'
+    passwordConfirmation: 'password',
+    profilePicture: 'https://vignette.wikia.nocookie.net/simpsons/images/4/4d/MargeSimpson.png/revision/latest?cb=20130405164548',
+    quote: 'Of course it is happening inside your head, Harry, but why on earth should that mean that it is not real?' ,
+    genre: 'Fantasy'
   }, {
     username: 'hannah',
     email: 'hannah@ga.co',
     password: 'password',
-    passwordConfirmation: 'password'
+    passwordConfirmation: 'password',
+    profilePicture: 'https://vignette.wikia.nocookie.net/simpsons/images/1/12/Lisa_Simpson-0.png/revision/latest?cb=20161027220133',
+    quote: 'Bond. James Bond.',
+    genre: 'Action'
   }])
   .then((users) => {
     console.log(`${users.length} users created`);
