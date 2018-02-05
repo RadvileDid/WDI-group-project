@@ -1,23 +1,20 @@
 angular
   .module('vamApp')
-  .controller('GroupIndexCtrl', GroupIndexCtrl);
+  .controller('GroupsIndexCtrl', GroupsIndexCtrl);
 
-GroupIndexCtrl.$inject = ['$http'];
-function GroupIndexCtrl($http) {
+GroupsIndexCtrl.$inject = ['$http'];
+function GroupsIndexCtrl($http) {
 
   const vm = this;
 
   $http
-    .get('')
+    .get('/api/index')
     .then(res => {
       console.log(res);
       vm.all = res.data;
     });
 
-
 }
-
 
 // i need to find out about the queries
 // then push them through to the front end
- 
