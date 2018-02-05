@@ -9,11 +9,16 @@ function GroupsIndexCtrl($http) {
 
   const vm = this;
 
-  // $http
-  //   .get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}&include_adult=false`)
-  //   .then(res => {
-  //     vm.all = res.data.results;
-  //   });
+  vm.findPopularMovies = findPopularMovies;
+
+  function findPopularMovies() {
+    $http
+      .get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
+      .then(res => {
+        vm.all = res.data.results;
+      });
+  }
+
 
   vm.findMovie = findMovie;
   // vm.badRequest = badRequest;

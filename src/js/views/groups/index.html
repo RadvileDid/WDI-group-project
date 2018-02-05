@@ -4,13 +4,12 @@
   <input ng-model="vm.search">
   <button type="submit" name="button">find a movie</button>
 </form>
+
+<form ng-submit="vm.findPopularMovies()">
+  <button type="submit" name="button">find popular movies</button>
+</form>
+
 <div ng-repeat="group in vm.all">
 <h2>{{ group.title }}</h2>
 <img ng-src="https://image.tmdb.org/t/p/w500/{{ group.poster_path}}" alt="">
 </div>
-
-<!-- <div ng-repeat="group in vm.all">
-<h2>{{ group.title }}</h2>
-<img ng-src="https://image.tmdb.org/t/p/w500/{{ group.poster_path}}" alt="">
-<a ui-sref="groupsShow">See group page</a>
-</div> -->
