@@ -24,8 +24,29 @@ function groupsShow(req, res, next) {
     .catch(next);
 }
 
+function groupsAddUser(req, res, next) {
+
+  const userId = req.user.id;
+
+  Group
+    .findById(req.params.id)
+    .exec()
+    .then((group) => {
+      if(!group) return res.notFound();
+
+      group.users.push(userId);
+
+      return group.save();
+    })
+    .then((group) => {
+      return res.json(group);
+    })
+    .catch(next);
+}
+
 
 module.exports = {
   index: groupsIndex,
-  show: groupsShow
+  show: groupsShow,
+  add: groupsAddUser
 };

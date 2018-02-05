@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const groupSchema = new mongoose.Schema({
-  users: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  users: [{ type: mongoose.Schema.ObjectId, ref: 'User' }], //shall we name this something else?
   movie: {
     title: {type: String, required: true},
     image: {type: String, required: true}
