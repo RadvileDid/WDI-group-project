@@ -39,9 +39,6 @@ User
   .then((users) => {
     console.log(`${users.length} users created`);
   })
-  .finally(() => {
-    return mongoose.connection.close();
-  })
   .catch(err => console.log(err));
 
 
