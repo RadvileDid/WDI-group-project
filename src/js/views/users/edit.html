@@ -1,7 +1,51 @@
 <form ng-submit="vm.userUpdate()">
-
-  <label class="label" for="name">Username</label>
-  <input type="text" name="username" ng-model="vm.user.username">
-  <input type="submit" value="Update">
+  <div class="field">
+    <label class="label" for="email">Username</label>
+    <input class="input" type="text" name="username" id="username" ng-model="vm.user.username">
+  </div>
+  <div class="field">
+    <label class="label" for="email">Email</label>
+    <input class="input" type="text" name="email" id="email" ng-model="vm.user.email">
+  </div>
+  <div class="field">
+    <label class="label" for="password">Password</label>
+    <input class="input" type="password" name="password" id="password" ng-model="vm.user.password">
+  </div>
+  <div class="form-group">
+    <label class="label" for="profilePicture">Profile picture</label>
+    <input type="text" class="form-control" name="profilePicture" id="profilePicture" ng-model="vm.user.profilePicture" required>
+  </div>
+  <div class="form-group">
+    <label class="label" for="quote">Favourite movie quote</label>
+    <input type="text" class="form-control" name="quote" id="quote" ng-model="vm.user.quote" required>
+  </div>
+  <div class="form-group">
+    <label class="label" for="genre">Favourite movie genre</label>
+    <select class="form-control" id="genre" type="text" ng-model="vm.user.genre" name="genre">
+      <option>Choose a genre</option>
+      <option>Action</option>
+      <option>Adventure</option>
+      <option>Animation</option>
+      <option>Comedy</option>
+      <option>Crime</option>
+      <option>Documentary</option>
+      <option>Drama</option>
+      <option>Family</option>
+      <option>Fantasy</option>
+      <option>History</option>
+      <option>Horror</option>
+      <option>Music</option>
+      <option>Mystery</option>
+      <option>Romance</option>
+      <option>Science</option>
+      <option>Fiction</option>
+      <option>Thriller</option>
+      <option>War</option>
+      <option>Western</option>
+    </select>
+  </div>
+  <div class="field">
+    <input type="submit" class="button is-primary is-fullwidth" value="Update">
+  </div>
 
 </form>
