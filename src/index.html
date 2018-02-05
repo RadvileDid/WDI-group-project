@@ -8,7 +8,8 @@
   <!-- inject:css -->
   <!-- endinject -->
 </head>
-<body>
+<body ng-controller="MainCtrl as main">
+  <a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">Profile</a>
   <h1>WDI Group Project!</h1>
   <main class="container" ui-view></main>
 </body>
