@@ -19,7 +19,7 @@ function groupsShow(req, res, next) {
     .then((group) => {
       if(!group) return res.notFound();
       // here we are adding 'group' to the locals object after res.render
-      return res.render('groups/show', { group });
+      return res.status(200).json(group);
     })
     .catch(next);
 }

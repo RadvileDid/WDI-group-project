@@ -5,13 +5,12 @@ angular
 GroupsShowCtrl.$inject = ['$state', '$http'];
 function GroupsShowCtrl($state, $http) {
   const vm = this;
-  vm.group = {};
+
 
   $http
     .get(`/api/groups/${$state.params.id}`)
     .then((response) => {
-      console.log(response);
-      // vm.group = response.data;
+      vm.group = response.data;
     });
 
   vm.delete = deleteGroup;
@@ -25,5 +24,4 @@ function GroupsShowCtrl($state, $http) {
       });
   }
 
-  console.log(vm.group);
 }
