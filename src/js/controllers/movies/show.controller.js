@@ -2,12 +2,12 @@ angular
   .module('vamApp')
   .controller('MovieCtrl', MovieCtrl);
 
-MovieCtrl.$inject = ['$http', '$state', 'MovieComment', 'Group'];
+MovieCtrl.$inject = ['$http', '$state', 'MovieComment', 'Movie'];
 
-function MovieCtrl($http, $state, MovieComment, Group) {
+function MovieCtrl($http, $state, MovieComment, Movie) {
   const apiKey = '1d4fa77475568ca9a63fb4a287dd496b';
   const vm = this;
-  vm.group = Group.get($state.params.id);
+  vm.movie = Movie.get($state.params.id);
 
   $http
     .get(`https://api.themoviedb.org/3/movie/${$state.params.id}?api_key=${apiKey}`, { skipAuthorization: true })
@@ -41,23 +41,23 @@ function MovieCtrl($http, $state, MovieComment, Group) {
   // vm.deleteComment = deleteComment;
 
   //Otis
-  // function deleteGroup() {
-  //   vm.group
+  // function deleteMovie() {
+  //   vm.movie
   //     .$remove()
   //     .then(() =>
-  //       $state.go('groupsIndex'));
+  //       $state.go('moviesIndex'));
   // }
   //
-  // vm.delete = deleteGroup;
+  // vm.delete = deleteMovie;
   //
-  // function addGroup() {
-  //   Group
-  //     .joinGroup({ id: vm.user.id }) //??????????
+  // function addMovie() {
+  //   Movie
+  //     .joinMovie({ id: vm.user.id }) //??????????
   //     .$promise
-  //     .then((response) => vm.group.add = response.add);
+  //     .then((response) => vm.movie.add = response.add);
   // }
   //
-  // vm.add = addGroup;
+  // vm.add = addMovie;
 
 }
 
@@ -93,26 +93,26 @@ function MovieCtrl($http, $state, MovieComment, Group) {
 
 // angular
 //   .module('vamApp')
-//   .controller('GroupsShowCtrl', GroupsShowCtrl),
+//   .controller('MoviesShowCtrl', MoviesShowCtrl),
 //
-// GroupsShowCtrl.$inject = ['$state', '$http'];
-// function GroupsShowCtrl($state, $http) {
+// MoviesShowCtrl.$inject = ['$state', '$http'];
+// function MoviesShowCtrl($state, $http) {
 //   const vm = this;
 //
 //   $http
-//     .get(`/api/groups/${$state.params.id}`)
+//     .get(`/api/movies/${$state.params.id}`)
 //     .then((response) => {
-//       vm.group = response.data;
+//       vm.movie = response.data;
 //     });
 //
-//   vm.delete = deleteGroup;
+//   vm.delete = deleteMovie;
 //
-//   function deleteGroup() {
+//   function deleteMovie() {
 //
 //     $http
-//       .delete(`/api/groups/${$state.params.id}`)
+//       .delete(`/api/movies/${$state.params.id}`)
 //       .then(() => {
-//         $state.go('groupsIndex');
+//         $state.go('moviesIndex');
 //       });
 //   }
 //
