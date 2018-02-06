@@ -17,7 +17,7 @@ function Group($resource) {
 MovieComment.$inject = ['$resource'];
 function MovieComment($resource) {
   return new
-  $resource('/api/groups/:id/comments/:commentId', { id: '@id', commentId: '@commentId' }, {
+  $resource('/api/group/:id/comments/:commentId', { id: '@id', commentId: '@commentId' }, {
     update: { method: 'PUT' }
   });
 }
