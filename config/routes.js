@@ -24,6 +24,7 @@ router.route('/groups')
   .get(groups.index);
 
 router.route('/groups/:id')
-  .get(groups.show);
+  .get(groups.show)
+  .post(groups.add);
 
 module.exports = router;

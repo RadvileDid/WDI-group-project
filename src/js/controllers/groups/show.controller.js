@@ -2,7 +2,7 @@ angular
   .module('vamApp')
   .controller('GroupsShowCtrl', GroupsShowCtrl),
 
-GroupsShowCtrl.$inject = ['$state', '$http'];
+GroupsShowCtrl.$inject = ['$state', '$http']; 
 function GroupsShowCtrl($state, $http) {
   const vm = this;
 
