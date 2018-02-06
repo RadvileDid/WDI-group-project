@@ -26,4 +26,7 @@ router.route('/groups')
 router.route('/groups/:id')
   .get(groups.show);
 
+router.route('/groups/:id/comments')
+  .post(secureRoute, groups.addComment);
+
 module.exports = router;

@@ -14,6 +14,7 @@ function groupsIndex(req, res, next) {
 function groupsShow(req, res, next) {
   Group
     .findById(req.params.id)
+    .populate('comments.createdBy')
     // .populate('users') => this needs to be added
     .exec()
     .then((group) => {
@@ -24,8 +25,28 @@ function groupsShow(req, res, next) {
     .catch(next);
 }
 
+function addCommentRoute(req, res, next) {
+
+  req.body.createdBy = req.currentUser;
+
+  Group
+    .findById(req.params.id)
+    .exec()
+    .then((movie) => {
+      if(!movie) return res.notFound();
+
+      const comment = movie.comments.create(req.body);
+      movie.comments.push(comment);
+
+      return movie.save()
+        .then(() => res.json(comment));
+    })
+    .catch(next);
+}
+
 
 module.exports = {
   index: groupsIndex,
-  show: groupsShow
+  show: groupsShow,
+  addComment: addCommentRoute
 };
