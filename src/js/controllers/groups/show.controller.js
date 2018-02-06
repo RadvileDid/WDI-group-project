@@ -15,6 +15,7 @@ function GroupsShowCtrl($state, $http) {
   vm.delete = deleteGroup;
 
   function deleteGroup() {
+
     $http
       .delete(`/api/groups/${$state.params.id}`)
       .then(() => {
