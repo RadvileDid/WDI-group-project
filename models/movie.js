@@ -7,16 +7,15 @@ const commentSchema = new mongoose.Schema({
 
 commentSchema.set('toJSON', { virtuals: true });
 
-const groupSchema = new mongoose.Schema({
-  users: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+const movieSchema = new mongoose.Schema({
   movieId: { type: Number },
-  comments: [ commentSchema ]
-
+  comments: [ commentSchema ],
+  users: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
 });
 
-groupSchema.set('toJSON', { virtuals: true });
+movieSchema.set('toJSON', { virtuals: true });
 
-module.exports = mongoose.model('Group', groupSchema);
+module.exports = mongoose.model('Movie', movieSchema);
 
 
 // angular select feature when searching that creates a dropdown based on search queries
