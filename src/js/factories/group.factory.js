@@ -1,6 +1,7 @@
 angular
   .module('vamApp')
-  .factory('Group', Group);
+  .factory('Group', Group)
+  .factory('MovieComment', MovieComment);
 
 Group.$inject = ['$resource'];
 
@@ -11,4 +12,12 @@ function Group($resource) {
     leaveGroup: { method: 'DELETE', url: '/api/groups/:id/leave' }
   }
   );
+}
+
+MovieComment.$inject = ['$resource'];
+function MovieComment($resource) {
+  return new
+  $resource('/api/groups/:id/comments/:commentId', { id: '@id', commentId: '@commentId' }, {
+    update: { method: 'PUT' }
+  });
 }
