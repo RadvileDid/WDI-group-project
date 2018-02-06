@@ -44,7 +44,7 @@ function moviesAddUser(req, res, next) {
   //   .catch(next);
 
   Movie
-    .find({ movieId: req.params.id }) // req.params.id === movie id
+    .find([ {movieId: req.params.id} ]) // req.params.id === movie id
     .exec()
     .then(movie => {
       // a movie has been returned, add current users id to array of users for the movie

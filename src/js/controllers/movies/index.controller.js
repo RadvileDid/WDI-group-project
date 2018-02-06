@@ -1,9 +1,9 @@
 angular
   .module('vamApp')
-  .controller('GroupsIndexCtrl', GroupsIndexCtrl);
+  .controller('MoviesIndexCtrl', MoviesIndexCtrl);
 
-GroupsIndexCtrl.$inject = ['$http'];
-function GroupsIndexCtrl($http) {
+MoviesIndexCtrl.$inject = ['$http'];
+function MoviesIndexCtrl($http) {
   const apiKey = '1d4fa77475568ca9a63fb4a287dd496b';
   // const query = 'neverending%20story';
 
