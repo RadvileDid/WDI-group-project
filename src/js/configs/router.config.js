@@ -36,14 +36,14 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: '/js/views/users/index.html',
       controller: 'UsersIndexCtrl as vm'
     })
-    .state('groupsIndex', {
-      url: '/groups',
-      templateUrl: '/js/views/groups/index.html',
-      controller: 'GroupsIndexCtrl as vm'
+    .state('moviesIndex', {
+      url: '/movies',
+      templateUrl: '/js/views/movies/index.html',
+      controller: 'MoviesIndexCtrl as vm'
     })
     .state('movieshow', {
-      url: '/group/:id',
-      templateUrl: '/js/views/groups/show.html',
+      url: '/movie/:id',
+      templateUrl: '/js/views/movies/show.html',
       controller: 'MovieCtrl as vm'
     });
 
