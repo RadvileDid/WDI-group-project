@@ -26,22 +26,42 @@ function groupsShow(req, res, next) {
 }
 
 function groupsAddUser(req, res, next) {
-
-  const userId = req.user.id;
+  // const userId = req.user.id;
+  //
+  // Group
+  //   .findById(req.params.id)
+  //   .exec()
+  //   .then((group) => {
+  //     if(!group) return res.notFound();
+  //
+  //     group.users.push(userId);
+  //
+  //     return group.save();
+  //   })
+  //   .then((group) => {
+  //     return res.json(group);
+  //   })
+  //   .catch(next);
 
   Group
-    .findById(req.params.id)
+    .find({ movie.id : req.params.id }) // req.params.id === movie id
     .exec()
-    .then((group) => {
-      if(!group) return res.notFound();
+    .then(group => {
+      // a group has been returned, add current users id to array of users for the group
+      // if no group has been found, create a new group passing in current users id into new group
 
-      group.users.push(userId);
-
-      return group.save();
+      if (group) {
+        group.users.push(req.user.id);
+        return group.save();
+      } else {
+        return Group
+          .create({
+            users: [req.user.id],
+            movieId: req.params.id
+          })
+      }
     })
-    .then((group) => {
-      return res.json(group);
-    })
+    .then(group => res.status(204).json(group))
     .catch(next);
 }
 

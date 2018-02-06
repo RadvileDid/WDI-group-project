@@ -8,12 +8,17 @@ const commentSchema = new mongoose.Schema({
 commentSchema.set('toJSON', { virtuals: true });
 
 const groupSchema = new mongoose.Schema({
+<<<<<<< HEAD
   users: [{ type: mongoose.Schema.ObjectId, ref: 'User' }], //shall we name this something else?
   movie: {
     title: {type: String, required: true},
     image: {type: String, required: true},
     comments: [ commentSchema ]
   }
+=======
+  users: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  movieId: { type: Number }
+>>>>>>> creating-group
 });
 
 groupSchema.set('toJSON', { virtuals: true });

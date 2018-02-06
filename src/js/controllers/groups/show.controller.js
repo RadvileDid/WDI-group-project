@@ -9,10 +9,6 @@ function MovieCtrl($http, $state, MovieComment, Group) {
   const vm = this;
   vm.group = Group.get($state.params.id);
 
-<<<<<<< HEAD
-
-
-=======
   $http
     .get(`https://api.themoviedb.org/3/movie/${$state.params.id}?api_key=${apiKey}`, { skipAuthorization: true })
     .then(res => {
@@ -62,7 +58,6 @@ function MovieCtrl($http, $state, MovieComment, Group) {
   // }
   //
   // vm.add = addGroup;
->>>>>>> 56110e620c490b43c5d4891c5180b4481316c411
 
 }
 
