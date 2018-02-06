@@ -48,8 +48,8 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('movieshow', {
       url: '/group/:id',
-      templateUrl: '/js/views/movies/movieShow.html'
-      // controller: 'GroupsIndexCtrl as vm'
+      templateUrl: '/js/views/movies/movieShow.html',
+      controller: 'MovieCtrl as vm'
     });
 
 

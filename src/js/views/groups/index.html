@@ -7,7 +7,6 @@
 <div ng-repeat="group in vm.all">
 <h2>{{ group.title }}</h2>
 <img ng-src="https://image.tmdb.org/t/p/w500/{{ group.poster_path}}" alt="">
-<p>{{group.id}}</p>
 <a ui-sref="groupsShow">See group page</a>
 <a ui-sref="movieshow({ id: group.id })">More info...</a>
 </div>

@@ -11,6 +11,7 @@ function MovieCtrl($http, $state) {
   $http
     .get(`https://api.themoviedb.org/3/movie/${$state.params.id}?api_key=${apiKey}`)
     .then(res => {
-      vm.all = res;
+      console.log(res.data);
+      vm.movie = res.data;
     });
 }
