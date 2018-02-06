@@ -25,7 +25,7 @@ router.route('/movies')
 
 router.route('/movies/:id')
   .get(movies.show)
-  .post(movies.add);
+  .post(secureRoute, movies.add);
 
 router.route('/movies/:id/comments')
   .post(secureRoute, movies.addComment);
