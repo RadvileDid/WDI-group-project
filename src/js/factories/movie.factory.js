@@ -8,7 +8,7 @@ Movie.$inject = ['$resource'];
 function Movie($resource) {
   return new $resource('/api/movies/:id', { id: '@id' }, {
     update: { method: 'PUT' },
-    joinMovie: { method: 'POST', url: '/api/movies/:id/join' },
+    joinMovie: { method: 'POST', url: '/api/movies/:id/' },
     leaveMovie: { method: 'DELETE', url: '/api/movies/:id/leave' }
   }
   );

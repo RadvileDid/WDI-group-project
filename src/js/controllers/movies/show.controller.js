@@ -9,12 +9,26 @@ function MovieCtrl($http, $state, MovieComment, Movie) {
   const vm = this;
   vm.movie = Movie.get($state.params.id);
 
+
+  Movie
+    .get({ id: $state.params.id })
+    .$promise
+    .then(res => {
+      if(res.status === 404) {
+        vm.group.users = [];
+      }
+      vm.group = res.data;
+      console.log(vm.group);
+    });
+
+
   $http
     .get(`https://api.themoviedb.org/3/movie/${$state.params.id}?api_key=${apiKey}`, { skipAuthorization: true })
     .then(res => {
       console.log(res);
       vm.movie = res.data;
     });
+
 
   function addComment() {
     MovieComment
@@ -27,6 +41,22 @@ function MovieCtrl($http, $state, MovieComment, Movie) {
   }
 
   vm.addComment = addComment;
+
+  function addGroup() {
+    Movie
+      .joinMovie({ id: $state.params.id }) //??????????
+      .$promise
+      .then((response) => {
+        vm.group = response;
+        console.log(vm.group);
+      });
+  }
+
+
+
+  vm.add = addGroup;
+
+
   //
   // function deleteComment(comment) {
   //   MovieComment

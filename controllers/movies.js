@@ -13,8 +13,8 @@ function moviesIndex(req, res, next) {
 
 function moviesShow(req, res, next) {
   Movie
-    .findById(req.params.id)
-    .populate('comments.createdBy')
+    .find({ movieId: req.params.id}) //change
+    .populate('comments.createdBy') ///?
     // .populate('users') => this needs to be added
     .exec()
     .then((movie) => {
@@ -44,16 +44,19 @@ function moviesAddUser(req, res, next) {
   //   .catch(next);
 
   Movie
-    .find([ {movieId: req.params.id} ]) // req.params.id === movie id
+    .find({ movieId: req.params.id}) // req.params.id === movie id
+    // .populate('users');
     .exec()
     .then(movie => {
       // a movie has been returned, add current users id to array of users for the movie
       // if no movie has been found, create a new movie passing in current users id into new movie
 
-      if (movie) {
-        movie.users.push(req.user.id);
-        return movie.save();
+      if (movie.length !== 0) {
+        console.log('found', movie[0]);
+        movie[0].users.push(req.user.id); //?
+        return movie[0].save();
       } else {
+        console.log('not found', movie);
         return Movie
           .create({
             users: [req.user.id],
@@ -61,7 +64,7 @@ function moviesAddUser(req, res, next) {
           });
       }
     })
-    .then(movie => res.status(204).json(movie))
+    .then(movie => res.status(200).json(movie))
     .catch(next);
 }
 
