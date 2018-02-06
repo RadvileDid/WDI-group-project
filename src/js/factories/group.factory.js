@@ -1,13 +1,14 @@
 angular
   .module('vamApp')
-  .factory('GroupFactory', GroupFactory);
+  .factory('Group', Group);
 
-GroupFactory.$inject = ['$resource'];
+Group.$inject = ['$resource'];
 
-function GroupFactory($resource) {
-  return new $resource('/api/users/:id', { id: '@id' },
-    { update: { method: 'PUT' }
-    }
+function Group($resource) {
+  return new $resource('/api/users/:id', { id: '@id' }, {
+    update: { method: 'PUT' },
+    joinGroup: { method: 'POST', url: '/api/groups/:id/join' },
+    leaveGroup: { method: 'DELETE', url: '/api/groups/:id/leave' }
+  }
   );
-}
 }
