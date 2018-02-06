@@ -16,6 +16,9 @@
     <a ui-sref="groupsIndex">
       Movies
     </a>
+    <a ui-sref="usersIndex" ng-if="!main.isAuthenticated()">
+      Users
+    </a>
     <a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">Profile</a>
     <a ui-sref="login" ng-if="!main.isAuthenticated()">
       Login
