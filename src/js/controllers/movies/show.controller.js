@@ -44,12 +44,13 @@ function MovieCtrl($http, $state, MovieGroup) {
   }
 
   function addOrCreateGroup() {
+    
     MovieGroup
       .addUser({ id: $state.params.id }) // movie id from the themoviedb API
       .$promise
       .then((response) => {
         vm.group = response;
-        // console.log(vm.group);
+        console.log(vm.group);
         vm.isGroup = true;
       });
   }
