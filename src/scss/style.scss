@@ -1,4 +1,29 @@
+// img {
+//   width: 250px;
+//   height: auto;
+// }
+
+// img {
+//   &.singleMovieImage {
+//     &.col {
+//       &.s6{
+//         width: 300px;
+//         height: auto;
+//       }
+//     }
+//   }
+// }
+
+p {
+  padding: 5px;
+}
+
+span {
+  font-weight: bold;
+}
+
 img {
-  width: 250px;
-  height: auto;
+  &.test {
+    height: 400px;
+  }
 }
