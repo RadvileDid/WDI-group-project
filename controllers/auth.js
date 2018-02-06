@@ -19,7 +19,7 @@ function login(req, res, next) {
       if(!user || !user.validatePassword(req.body.password)) return res.unauthorized();
 
       const token = jwt.sign({ userId: user.id }, secret, { expiresIn: '1hr' });
-      return res.json({ token, message: `Welcome ${user.username}` });
+      return res.json({ token, message: `Welcome ${user.username}`, user });
     })
     .then( () => {
       console.log('logged in');
