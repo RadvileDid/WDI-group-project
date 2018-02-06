@@ -22,22 +22,38 @@
     </div>
   </div>
 
-<div class="comments">
-  <h3>Comments</h3>
+  <div class="row">
+    <h5 class="center-align">Comments</h5>
 
-  <p ng-if="!vm.movie.comments.length">0 comments</p>
-  <ul class="comments__created">
-    <li ng-repeat="comment in vm.movie.comments track by $index">
-      <a ui-sref="usersShow({ id: comment.createdBy.id })"><strong>{{ comment.createdBy.username }}</strong></a> - {{ comment.text }}
-    </li>
-  </ul>
+    <!-- <p ng-if="!vm.movie.comments.length">No comments</p>
+    <ul class="comments__created">
+      <li ng-repeat="comment in vm.movie.comments track by $index">
+        <a ui-sref="usersShow({ id: comment.createdBy.id })"><strong>{{ comment.createdBy.username }}</strong></a> - {{   comment.text }}
+      </li>
+    </ul> -->
 
-  <form ng-submit="vm.addComment()">
-  <!-- <form ng-if="main.isAuthenticated()"> -->
-    <label>Add comment</label>
-    <textarea ng-model="vm.newComment.text"></textarea>
-    <button class="button button--full">Comment</button>
-  </form>
 
-</div>
+    <div class="card">
+      <p class="noComments" ng-if="!vm.movie.comments.length">No comments yet...</p>
+      <ul class="comments__created">
+        <li ng-repeat="comment in vm.movie.comments track by $index"  class="card-content">
+          <a ui-sref="usersShow({ id: comment.createdBy.id })"><strong>{{ comment.createdBy.username }}</strong></a> - {{ comment.text }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <form ng-submit="vm.addComment()" >
+    <!-- <form ng-if="main.isAuthenticated()"> -->
+          <textarea ng-model="vm.newComment.text" placeholder="Leave your comment here..." class="center-align"></textarea>
+          <div class="row">
+            <div class="col s4"></div>
+            <button class="btn col s4">Add</button>
+            <div class="col s4"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+
 </div>
