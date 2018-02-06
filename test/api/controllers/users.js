@@ -47,7 +47,7 @@ describe('Users Controller Tests', () => {
 
     it('should return a 200 response', done => {
       api
-        .get(`/api/users/${user.id}`) //user.id is not defined. why?
+        .get(`/api/users/${user.id}`)
         .set('Accept', 'application/json')
         .set('Authorization', `Bearer ${token}`)
         .expect(200, done);
