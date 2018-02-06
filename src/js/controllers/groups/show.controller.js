@@ -2,11 +2,12 @@ angular
   .module('vamApp')
   .controller('MovieCtrl', MovieCtrl);
 
-MovieCtrl.$inject = ['$http', '$state', 'MovieComment'];
+MovieCtrl.$inject = ['$http', '$state', 'MovieComment', 'Group'];
 
-function MovieCtrl($http, $state, MovieComment) {
+function MovieCtrl($http, $state, MovieComment, Group) {
   const apiKey = '1d4fa77475568ca9a63fb4a287dd496b';
   const vm = this;
+  vm.group = Group.get($state.params.id);
 
   $http
     .get(`https://api.themoviedb.org/3/movie/${$state.params.id}?api_key=${apiKey}`, { skipAuthorization: true })
@@ -39,4 +40,80 @@ function MovieCtrl($http, $state, MovieComment) {
   //
   // vm.deleteComment = deleteComment;
 
+  //Otis
+  // function deleteGroup() {
+  //   vm.group
+  //     .$remove()
+  //     .then(() =>
+  //       $state.go('groupsIndex'));
+  // }
+  //
+  // vm.delete = deleteGroup;
+  //
+  // function addGroup() {
+  //   Group
+  //     .joinGroup({ id: vm.user.id }) //??????????
+  //     .$promise
+  //     .then((response) => vm.group.add = response.add);
+  // }
+  //
+  // vm.add = addGroup;
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//hannahs $http
+
+// angular
+//   .module('vamApp')
+//   .controller('GroupsShowCtrl', GroupsShowCtrl),
+//
+// GroupsShowCtrl.$inject = ['$state', '$http'];
+// function GroupsShowCtrl($state, $http) {
+//   const vm = this;
+//
+//   $http
+//     .get(`/api/groups/${$state.params.id}`)
+//     .then((response) => {
+//       vm.group = response.data;
+//     });
+//
+//   vm.delete = deleteGroup;
+//
+//   function deleteGroup() {
+//
+//     $http
+//       .delete(`/api/groups/${$state.params.id}`)
+//       .then(() => {
+//         $state.go('groupsIndex');
+//       });
+//   }
+//
+// }

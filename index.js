@@ -28,3 +28,6 @@ app.use(errorHandler);
 
 
 if(env !== 'test') app.listen(port, () => console.log(`Express is running on port: ${port}`));
+
+
+module.exports = app;
