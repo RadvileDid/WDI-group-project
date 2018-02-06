@@ -24,6 +24,10 @@ router.route('/groups')
   .get(groups.index);
 
 router.route('/groups/:id')
-  .get(groups.show);
+  .get(groups.show)
+  .post(groups.add);
+
+router.route('/groups/:id/comments')
+  .post(secureRoute, groups.addComment);
 
 module.exports = router;
