@@ -2,25 +2,28 @@ angular
   .module('vamApp')
   .controller('MovieCtrl', MovieCtrl);
 
-MovieCtrl.$inject = ['$http', '$state', 'MovieComment', 'Movie'];
-
-function MovieCtrl($http, $state, MovieComment, Movie) {
+MovieCtrl.$inject = ['$http', '$state', 'MovieGroup'];
+function MovieCtrl($http, $state, MovieGroup) {
   const apiKey = '1d4fa77475568ca9a63fb4a287dd496b';
   const vm = this;
-  vm.movie = Movie.get($state.params.id);
 
+  vm.addComment = addComment;
+  vm.add        = addOrCreateGroup;
 
-  Movie
-    .get({ id: $state.params.id })
+  MovieGroup
+    .query({ id: $state.params.id })
     .$promise
-    .then(res => {
-      if(res.status === 404) {
-        vm.group.users = [];
+    .then(data => {
+      vm.movieGroup = data;
+
+      if (vm.movieGroup.length !== 0) {
+        vm.isGroup = true;
+      } else {
+        vm.isGroup = false;
       }
-      vm.group = res.data;
-      console.log(vm.group);
     });
 
+  // vm.movieGroup = MovieGroup.query({ id: $state.params.id });
 
   $http
     .get(`https://api.themoviedb.org/3/movie/${$state.params.id}?api_key=${apiKey}`, { skipAuthorization: true })
@@ -31,8 +34,8 @@ function MovieCtrl($http, $state, MovieComment, Movie) {
 
 
   function addComment() {
-    MovieComment
-      .save({ id: vm.movie.id }, vm.newComment)
+    MovieGroup
+      .addComment({ id: vm.movie.id }, vm.newComment)
       .$promise
       .then((comment) => {
         vm.movie.comments.push(comment);
@@ -40,21 +43,18 @@ function MovieCtrl($http, $state, MovieComment, Movie) {
       });
   }
 
-  vm.addComment = addComment;
-
-  function addGroup() {
-    Movie
-      .joinMovie({ id: $state.params.id }) //??????????
+  function addOrCreateGroup() {
+    MovieGroup
+      .addUser({ id: $state.params.id }) // movie id from the themoviedb API
       .$promise
       .then((response) => {
         vm.group = response;
-        console.log(vm.group);
+        // console.log(vm.group);
+        vm.isGroup = true;
       });
   }
 
 
-
-  vm.add = addGroup;
 
 
   //

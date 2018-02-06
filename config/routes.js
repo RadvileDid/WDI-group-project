@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const auth = require('../controllers/auth');
 const users = require('../controllers/users');
-const movies = require('../controllers/movies');
+const movieGroups = require('../controllers/movieGroups');
 const secureRoute = require('../lib/secureRoute');
 
 // Routes go here
@@ -20,14 +20,14 @@ router.route('/users/:id')
   .put(secureRoute, users.update)
   .delete(secureRoute, users.delete);
 
-router.route('/movies')
-  .get(movies.index);
+router.route('/movieGroups')
+  .get(movieGroups.index);
 
-router.route('/movies/:id')
-  .get(movies.show)
-  .post(secureRoute, movies.add);
+router.route('/movieGroups/:id')
+  .get(movieGroups.show)
+  .post(secureRoute, movieGroups.add);
 
-router.route('/movies/:id/comments')
-  .post(secureRoute, movies.addComment);
+router.route('/movieGroups/:id/comments')
+  .post(secureRoute, movieGroups.addComment);
 
 module.exports = router;

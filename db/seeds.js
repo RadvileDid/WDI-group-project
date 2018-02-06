@@ -4,8 +4,10 @@ const { db, env } = require('../config/environment'); //dev db needs to be the d
 mongoose.Promise = require('bluebird');
 mongoose.connect(db[env]);
 
+const Group = require('../models/movieGroup');
 const User  = require('../models/user');
 
+Group.collection.drop();
 User.collection.drop();
 
 User
