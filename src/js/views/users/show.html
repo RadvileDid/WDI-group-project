@@ -1,17 +1,38 @@
-<section>
+<!-- <section>
+
+      <h1>{{ vm.user.username }}'s profile</h1>
+      <img ng-src="{{ vm.user.profilePicture }}">
+      <h2>{{ vm.user.quote }}</h2>
+      <h3>{{ vm.user.genre}}</h3>
+
   <div>
 
-    <h1>{{ vm.user.username }}'s profile</h1>
-    <img ng-src="{{ vm.user.profilePicture }}">
-    <h2>{{ vm.user.quote }}</h2>
-    <h3>{{ vm.user.genre}}</h3>
+    <button class="btn" ui-sref="usersEdit({ id: vm.user.id })" ng-if="main.isAuthenticated() && main.currentUserId === vm.user.id">Edit Profile</button>
 
-  </div>
-  <div>
-
-    <button ui-sref="usersEdit({ id: vm.user.id })" ng-if="main.isAuthenticated() && main.currentUserId === vm.user.id">Edit Profile</button>
-    <button ng-click="vm.userDelete()" ng-if="main.isAuthenticated() && main.currentUserId === vm.user.id">Delete Profile</button>
+    <button class="btn" ng-click="vm.userDelete()" ng-if="main.isAuthenticated() && main.currentUserId === vm.user.id">Delete Profile</button>
 
   </div>
 
-</section>
+</section> -->
+
+<div class="col s12 m7">
+  <div class="card horizontal">
+    <div class="card-image">
+      <img ng-src="{{ vm.user.profilePicture }}">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <h2 class="header">{{ vm.user.username }}'s profile</h2>
+        <p>Favourite movie quote: {{ vm.user.quote }}</p>
+        <p>Favourite movie genre: {{ vm.user.genre}}</p>
+      </div>
+      <div class="card-content">
+
+      </div>
+      <div class="card-action">
+        <button class="btn" ui-sref="usersEdit({ id: vm.user.id })" ng-if="main.isAuthenticated() && main.currentUserId === vm.user.id">Edit Profile</button>
+        <button class="btn" ng-click="vm.userDelete()" ng-if="main.isAuthenticated() && main.currentUserId === vm.user.id">Delete Profile</button>
+      </div>
+    </div>
+  </div>
+</div>
