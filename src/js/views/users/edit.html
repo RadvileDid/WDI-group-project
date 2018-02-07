@@ -21,14 +21,14 @@
         </div>
         <div>
           <label class="label" for="profilePicture">Profile picture URL</label>
-          <input type="text" class="form-control" name="profilePicture" id="profilePicture" ng-model="vm.user.profilePicture" required>
+          <input type="text" class="input" name="profilePicture" id="profilePicture" ng-model="vm.user.profilePicture" required>
           <div class="error" ng-show="form.profilePicture.$dirty && form.profilePicture.$invalid">
             <small class="error" ng-show="form.profilePicture.$error.required">Your profile picture URL is required.</small>
           </div>
         </div>
         <div>
           <label class="label" for="quote">Favourite movie quote</label>
-          <input type="text" class="form-control" name="quote" id="quote" ng-model="vm.user.quote" ng-minlength=5 required>
+          <input type="text" class="input" name="quote" id="quote" ng-model="vm.user.quote" ng-minlength=5 required>
           <div class="error" ng-show="form.quote.$dirty && form.quote.$invalid">
             <small class="error" ng-show="form.quote.$error.required">Your favourite movie quote is required.</small>
             <small class="error" ng-show="form.quote.$error.minlength">Movie quote is required to be at least 5 characters</small>

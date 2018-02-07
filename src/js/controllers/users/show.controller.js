@@ -10,6 +10,7 @@ function UsersShowCtrl($state, UserFactory, $auth) {
   vm.user = UserFactory.get($state.params);
   vm.userDelete = userDelete;
 
+
   function userDelete(){
     UserFactory
       .delete($state.params)
