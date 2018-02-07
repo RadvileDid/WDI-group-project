@@ -14,24 +14,31 @@
           <p><span>Genre:</span> {{vm.movie.genres[0].name}}, {{vm.movie.genres[1].name}}</p>
           <p><span>Language:</span> {{vm.movie.spoken_languages[0].name}}</p>
         </div>
-        <div class="row">
-          <div class="col s4">
-            <button class="btn" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join Group</button>
-            <button class="btn" ng-show="vm.isInGroup()" ng-click="vm.remove()">Leave Group</button>
+        <div class="join-group">
+          <div class="row">
+            <div class="col s12">
+              <button class="btn" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join Group</button>
+              <button class="btn" ng-show="vm.isInGroup()" ng-click="vm.remove()">Leave Group</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="users col s12 m7">
-    <ul>
-      <li ng-repeat="user in vm.movieGroup.users">
-        <a ui-sref="usersShow({ id: user.id })">
+  <!-- <div class="users col s12 m7"> -->
+
+  <ul>
+    <li  class="user-group" ng-repeat="user in vm.movieGroup.users">
+      <a ui-sref="usersShow({ id: user.id })">
+        <div class="chip">
           <img ng-src="{{ user.profilePicture }}">{{ user.username }}
-        </a>
-      </li>
-    </ul>
-  </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+
+  <!-- </div> -->
   <div class="row">
     <h5 class="center-align">Comments</h5>
 
@@ -56,6 +63,8 @@
           </div>
         </form>
       </div>
-    </div>
+    </form>
+  </div>
+</div>
 
 </div>
