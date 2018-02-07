@@ -24,27 +24,28 @@
     </div>
   </div>
   <!-- <div class="users col s12 m7"> -->
-    <ul>
 
-      <li  class="user-group" ng-repeat="user in vm.movieGroup.users">
-        <a ui-sref="usersShow({ id: user.id })">
-          <div class="chip">
-            <img ng-src="{{ user.profilePicture }}">{{ user.username }}
-          </div>
-        </a>
-      </li>
-    </ul>
-
-  <!-- </div> -->
-  <div class="row">
-    <h5 class="center-align">Comments</h5>
+          <ul>
+            <li  class="user-group" ng-repeat="user in vm.movieGroup.users">
+              <a ui-sref="usersShow({ id: user.id })">
+                <div class="chip">
+                  <img ng-src="{{ user.profilePicture }}">{{ user.username }}
+                </div>
+              </a>
+            </li>
+          </ul>
 
 
-    <!-- <p ng-if="!vm.movieGroup.comments.length">No comments</p>
-    <ul class="comments__created">
-    <li ng-repeat="comment in vm.movieGroup.comments track by $index">
-    <a ui-sref="usersShow({ id: comment.createdBy.id })"><strong>{{ comment.createdBy.username }}</strong></a> - {{   comment.text }}
-  </li>
+<!-- </div> -->
+<div class="row">
+  <h5 class="center-align">Comments</h5>
+
+
+  <!-- <p ng-if="!vm.movieGroup.comments.length">No comments</p>
+  <ul class="comments__created">
+  <li ng-repeat="comment in vm.movieGroup.comments track by $index">
+  <a ui-sref="usersShow({ id: comment.createdBy.id })"><strong>{{ comment.createdBy.username }}</strong></a> - {{   comment.text }}
+</li>
 </ul> -->
 
 
