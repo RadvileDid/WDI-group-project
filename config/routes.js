@@ -33,4 +33,7 @@ router.route('/movieGroups/:id/leave')
 router.route('/movieGroups/:id/comments')
   .post(secureRoute, movieGroups.addComment);
 
+router.route('/movieGroups/:id/comments/:commentId')
+  .delete(secureRoute, movieGroups.deleteComment);
+
 module.exports = router;

@@ -69,7 +69,6 @@ function movieGroupsRemoveUser(req, res, next) {
 }
 
 function addCommentRoute(req, res, next) {
-  console.log('here');
   req.body.createdBy = req.user;
 
   MovieGroup
@@ -89,10 +88,30 @@ function addCommentRoute(req, res, next) {
     .catch(next);
 }
 
+function deleteCommentRoute(req, res, next) {
+  MovieGroup
+    .findById(req.params.id)
+    .exec()
+    .then((group) => {
+      if(!group) return res.notFound(); // make comments hidden for no group
+      const comment = group.comments.id(req.params.commentId);
+      comment.remove();
+
+      group.save();
+
+      return comment;
+    })
+    .then((comment) => res.json(comment))
+    .catch(next);
+}
+
+
+
 module.exports = {
   index: movieGroupsIndex,
   show: movieGroupsShow,
   add: movieGroupsAddUser,
   remove: movieGroupsRemoveUser,
-  addComment: addCommentRoute
+  addComment: addCommentRoute,
+  deleteComment: deleteCommentRoute
 };

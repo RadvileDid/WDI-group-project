@@ -70,19 +70,18 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
     return vm.movieGroup && $auth.isAuthenticated() && (vm.movieGroup.users.some(user => user.id === currentUserId));
   }
 
-  //
-  // function deleteComment(comment) {
-  //   MovieComment
-  //     .delete({ movieId: vm.movie.id, id: comment.id })
-  //     .$promise
-  //     .then(() => {
-  //       const index = vm.movie.comments.indexOf(comment);
-  //       vm.movie.comments.splice(index, 1);
-  //     });
-  // }
-  //
-  // vm.deleteComment = deleteComment;
 
+  function deleteComment(comment) {
+    MovieGroup
+      .deleteComment({ id: vm.movieGroup.id, commentId: comment.id })
+      .$promise
+      .then(() => {
+        const index = vm.movieGroup.comments.indexOf(comment);
+        vm.movieGroup.comments.splice(index, 1);
+      });
+  }
+
+  vm.deleteComment = deleteComment;
 
 
 }
