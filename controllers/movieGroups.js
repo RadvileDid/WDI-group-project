@@ -71,20 +71,23 @@ function movieGroupsRemoveUser(req, res, next) {
 }
 
 function addCommentRoute(req, res, next) {
+  console.log('here');
   req.body.createdBy = req.user;
 
   MovieGroup
-    .findById(req.params.id)
+    .findOne({ movieId: req.params.id})
     .exec()
     .then((group) => {
-      if(!group) return res.notFound();
+      console.log(group);
+      if(!group) return res.notFound(); // make comments hidden for no group
 
       const comment = group.comments.create(req.body);
       group.comments.push(comment);
+      group.save();
 
-      return group.save()
-        .then(() => res.json(comment));
+      return comment;
     })
+    .then((comment) => res.json(comment))
     .catch(next);
 }
 

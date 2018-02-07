@@ -8,6 +8,6 @@ function MovieGroup($resource) {
     update: { method: 'PUT' },
     addUser: { method: 'POST', url: '/api/movieGroups/:id/' },
     leaveMovieGroup: { method: 'DELETE', url: '/api/movieGroups/:id/leave' },
-    addComment: { method: 'POST', url: '/api/movies/:id/comments/:commentId'}
+    addComment: { method: 'POST', url: '/api/movieGroups/:id/comments'}
   });
 }
