@@ -45,7 +45,7 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
         vm.newComment = {};
       });
   }
-
+  
   function addOrCreateGroup() {
 
     MovieGroup
