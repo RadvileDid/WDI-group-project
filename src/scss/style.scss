@@ -29,7 +29,7 @@ div {
   &.error{
     background: #fff0f4;
     color: #c51244;
-    padding: 5px 10px;
+    padding: 5px 0 15px;
     border-radius: 5px;
   }
 }
@@ -57,4 +57,19 @@ input{
 
 .movie-search{
   margin:20px 0 40px;
+}
+
+.col {
+  &.l4{
+    &.movieCard{
+      width: calc(33.3333333333% - 24px);
+      margin: 0px 12px 24px;
+      padding: 0;
+    }
+  }
+}
+
+
+.titleSize{
+  min-height: 75px;
 }
