@@ -40,7 +40,8 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
       .addComment({ id: vm.movie.id }, vm.newComment)
       .$promise
       .then((comment) => {
-        vm.movie.comments.push(comment);
+        console.log(comment);
+        vm.movieGroup.comments.push(comment);
         vm.newComment = {};
       });
   }
