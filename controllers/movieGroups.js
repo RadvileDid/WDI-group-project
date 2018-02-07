@@ -14,7 +14,7 @@ function movieGroupsIndex(req, res, next) {
 function movieGroupsShow(req, res, next) {
   MovieGroup
     .findOne({ movieId: req.params.id}) //change
-    .populate('comments.createdBy') ///?
+    .populate('comments.createdBy users') ///?
     // .populate('users') => this needs to be added
     .exec()
     .then((group) => {
