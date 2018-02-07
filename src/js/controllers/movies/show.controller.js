@@ -19,6 +19,13 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
     .then(data => {
       console.log('the group', data);
       vm.movieGroup = data;
+    })
+    .catch(() => {
+      // if no group exists on page load
+      vm.movieGroup = {
+        users: [],
+        comments: []
+      };
     });
 
   $http
