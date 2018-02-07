@@ -73,11 +73,11 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
 
   function deleteComment(comment) {
     MovieGroup
-      .delete({ movieId: vm.movie.id, id: comment.id })
+      .deleteComment({ id: vm.movieGroup.id, commentId: comment.id })
       .$promise
       .then(() => {
-        const index = vm.movie.comments.indexOf(comment);
-        vm.movie.comments.splice(index, 1);
+        const index = vm.movieGroup.comments.indexOf(comment);
+        vm.movieGroup.comments.splice(index, 1);
       });
   }
 

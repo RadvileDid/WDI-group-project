@@ -35,20 +35,12 @@
   <div class="row">
     <h5 class="center-align">Comments</h5>
 
-    <!-- <p ng-if="!vm.movieGroup.comments.length">No comments</p>
-    <ul class="comments__created">
-      <li ng-repeat="comment in vm.movieGroup.comments track by $index">
-        <a ui-sref="usersShow({ id: comment.createdBy.id })"><strong>{{ comment.createdBy.username }}</strong></a> - {{   comment.text }}
-      </li>
-    </ul> -->
-
-
     <div class="card">
       <p class="noComments" ng-if="!vm.movieGroup.comments.length">No comments yet...</p>
       <ul class="comments__created">
         <li ng-repeat="comment in vm.movieGroup.comments track by $index"  class="card-content">
-          <p>{{ comment.text }}<a ui-sref="usersShow({ id: comment.createdBy.id })"><strong>{{ comment.createdBy.username }}</strong></a></p>
-          <button class="button" ng-click="vm.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">Delete</button>
+          <p>{{ comment.text }}<a ui-sref="usersShow({ id: comment.createdBy.id })"><strong> - {{ comment.createdBy.username }}</strong></a>
+          <button class="button" ng-click="vm.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">Delete</button></p>
         </li>
       </ul>
     </div>
@@ -56,7 +48,6 @@
     <div class="card">
       <div class="card-content">
         <form ng-submit="vm.addComment()" >
-    <!-- <form ng-if="main.isAuthenticated()"> -->
           <textarea ng-model="vm.newComment.text" placeholder="Leave your comment here..." class="center-align"></textarea>
           <div class="row">
             <div class="col s4"></div>
