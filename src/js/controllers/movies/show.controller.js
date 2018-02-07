@@ -35,7 +35,6 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
       vm.movie = res.data;
     });
 
-
   function addComment() {
     MovieGroup
       .addComment({ id: vm.movie.id }, vm.newComment)
@@ -45,7 +44,7 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
         vm.newComment = {};
       });
   }
-
+  
   function addOrCreateGroup() {
 
     MovieGroup
