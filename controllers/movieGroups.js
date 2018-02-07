@@ -13,7 +13,7 @@ function movieGroupsIndex(req, res, next) {
 
 function movieGroupsShow(req, res, next) {
   MovieGroup
-    .find({ movieId: req.params.id}) //change
+    .findOne({ movieId: req.params.id}) //change
     .populate('comments.createdBy') ///?
     // .populate('users') => this needs to be added
     .exec()
@@ -47,8 +47,23 @@ function movieGroupsAddUser(req, res, next) {
     .catch(next);
 }
 
+function movieGroupsRemoveUser(req, res, next) {
+  MovieGroup
+    .findOne({ movieId: req.params.id})
+    .exec()
+    .then(group => {
+      if (!group) return res.notFound();
+      console.log('Group users =>', group.users);
+      const index = group.users.indexOf(req.user.id);
+      group.users.splice(index, 1);
+      return group.save();
+    })
+    .then(group => res.status(200).json(group))
+    .catch(next);
+}
+
 function addCommentRoute(req, res, next) {
-  req.body.createdBy = req.currentUser;
+  req.body.createdBy = req.user;
 
   MovieGroup
     .findById(req.params.id)
@@ -69,5 +84,6 @@ module.exports = {
   index: movieGroupsIndex,
   show: movieGroupsShow,
   add: movieGroupsAddUser,
+  remove: movieGroupsRemoveUser,
   addComment: addCommentRoute
 };

@@ -27,6 +27,9 @@ router.route('/movieGroups/:id')
   .get(movieGroups.show)
   .post(secureRoute, movieGroups.add);
 
+router.route('/movieGroups/:id/leave')
+  .delete(secureRoute, movieGroups.remove);
+
 router.route('/movieGroups/:id/comments')
   .post(secureRoute, movieGroups.addComment);
 
