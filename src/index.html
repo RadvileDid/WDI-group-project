@@ -16,7 +16,11 @@
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <!-- <li><a ui-sref="home">Home</a></li> -->
         <li><a ui-sref="moviesIndex">Movies</a></li>
+<<<<<<< HEAD
         <li><a ui-sref="usersIndex" ng-if="main.isAuthenticated()">Users</a></li>
+=======
+        <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">Profile</a></li>
+>>>>>>> a4e1348d903f220de2cb96520acb6f0e45fb3655
         <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
         <li><a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a></li>
         <li><a ng-click="main.logout()"  ng-if="main.isAuthenticated()">Logout</a></li>
@@ -27,7 +31,6 @@
     <img ng-src="../../images/eyeball-umbrella.jpg">
   </div> -->
 
-  <div class="notification" ng-if="main.message">{{ main.message }}</div>
   <main class="container" ui-view></main>
 
 </body>

@@ -6,11 +6,6 @@ span {
   font-weight: bold;
 }
 
-img {
-  &.test {
-    min-height: 400px;
-  }
-}
 
 .noComments {
   padding: 40px;
@@ -30,10 +25,6 @@ select {
   margin: 15px 0;
 }
 
-.movie-search {
-
-}
-
 div {
   &.error{
     background: #fff0f4;
@@ -47,10 +38,6 @@ div {
   margin: 15px 0;
 }
 
-
-// .ng-valid {
-//   color: green;
-// }
 
 input{
   &.input{
@@ -66,4 +53,8 @@ input{
 
 .join-group {
   align-self: center;
+}
+
+.movie-search{
+  margin:20px 0 40px;
 }
