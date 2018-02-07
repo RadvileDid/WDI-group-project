@@ -10,18 +10,25 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
-      <ul>
-        <a ui-sref="home">Home</a>
-        <a ui-sref="moviesIndex">Movies</a>
-        <a ui-sref="usersIndex" ng-if="!main.isAuthenticated()">Users</a>
-        <a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">Profile</a>
-        <a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a>
-        <a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a>
-        <a ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo right">VAM</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <!-- <li><a ui-sref="home">Home</a></li> -->
+        <li><a ui-sref="moviesIndex">Movies</a></li>
+        <li><a ui-sref="usersIndex" ng-if="!main.isAuthenticated()">Users</a></li>
+        <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
+        <li><a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a></li>
+        <li><a ng-click="main.logout()"  ng-if="main.isAuthenticated()">Logout</a></li>
       </ul>
-    <div class="notification" ng-if="main.message">{{ main.message }}</div>
+    </div>
+  </nav>
+  <!-- <div class="container">
+    <img ng-src="../../images/eyeball-umbrella.jpg">
+  </div> -->
+
+  <div class="notification" ng-if="main.message">{{ main.message }}</div>
   <main class="container" ui-view></main>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
-  
+
 </body>
 </html>
