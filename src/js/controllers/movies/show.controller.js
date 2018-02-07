@@ -38,6 +38,7 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
   }
 
   function addOrCreateGroup() {
+
     MovieGroup
       .addUser({ id: $state.params.id }) // movie id from the themoviedb API
       .$promise
