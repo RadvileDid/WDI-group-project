@@ -16,7 +16,7 @@
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <!-- <li><a ui-sref="home">Home</a></li> -->
         <li><a ui-sref="moviesIndex">Movies</a></li>
-        <li><a ui-sref="usersIndex" ng-if="!main.isAuthenticated()">Users</a></li>
+        <li><a ui-sref="usersIndex" ng-if="main.isAuthenticated()">Users</a></li>
         <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
         <li><a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a></li>
         <li><a ng-click="main.logout()"  ng-if="main.isAuthenticated()">Logout</a></li>
