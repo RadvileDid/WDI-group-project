@@ -23,7 +23,6 @@
     <div class="col s3">
       <h2>{{ movie.title }}</h2>
       <img ng-src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path}}" alt="movie poster" class="responsive-img">
-      <a ui-sref="moviesShow">See movie page</a>
       <a ui-sref="movieShow({ id: movie.id })">More info...</a>
     </div>
   </div>

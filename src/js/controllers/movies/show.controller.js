@@ -2,28 +2,24 @@ angular
   .module('vamApp')
   .controller('MovieCtrl', MovieCtrl);
 
-MovieCtrl.$inject = ['$http', '$state', 'MovieGroup'];
-function MovieCtrl($http, $state, MovieGroup) {
+MovieCtrl.$inject = ['$http', '$state', 'MovieGroup', '$auth'];
+function MovieCtrl($http, $state, MovieGroup, $auth) {
   const apiKey = '1d4fa77475568ca9a63fb4a287dd496b';
   const vm = this;
+  const currentUserId = $auth.getPayload().userId;
 
   vm.addComment = addComment;
   vm.add        = addOrCreateGroup;
+  vm.remove = leaveMovieGroup;
+  vm.isInGroup = isInGroup;
 
   MovieGroup
-    .query({ id: $state.params.id })
+    .get({ id: $state.params.id })
     .$promise
     .then(data => {
+      console.log('the group', data);
       vm.movieGroup = data;
-
-      if (vm.movieGroup.length !== 0) {
-        vm.isGroup = true;
-      } else {
-        vm.isGroup = false;
-      }
     });
-
-  // vm.movieGroup = MovieGroup.query({ id: $state.params.id });
 
   $http
     .get(`https://api.themoviedb.org/3/movie/${$state.params.id}?api_key=${apiKey}`, { skipAuthorization: true })
@@ -44,19 +40,27 @@ function MovieCtrl($http, $state, MovieGroup) {
   }
 
   function addOrCreateGroup() {
-    
+
     MovieGroup
       .addUser({ id: $state.params.id }) // movie id from the themoviedb API
       .$promise
       .then((response) => {
-        vm.group = response;
-        console.log(vm.group);
-        vm.isGroup = true;
+        vm.movieGroup.users = response.users;
       });
   }
 
+  function leaveMovieGroup() {
+    MovieGroup
+      .leaveMovieGroup({ id: $state.params.id })
+      .$promise
+      .then((response) => {
+        vm.movieGroup.users = response.users;
+      });
+  }
 
-
+  function isInGroup() {
+    return vm.movieGroup && $auth.isAuthenticated() && (vm.movieGroup.users.some(user => user.id === currentUserId));
+  }
 
   //
   // function deleteComment(comment) {
@@ -71,24 +75,7 @@ function MovieCtrl($http, $state, MovieGroup) {
   //
   // vm.deleteComment = deleteComment;
 
-  //Otis
-  // function deleteMovie() {
-  //   vm.movie
-  //     .$remove()
-  //     .then(() =>
-  //       $state.go('moviesIndex'));
-  // }
-  //
-  // vm.delete = deleteMovie;
-  //
-  // function addMovie() {
-  //   Movie
-  //     .joinMovie({ id: vm.user.id }) //??????????
-  //     .$promise
-  //     .then((response) => vm.movie.add = response.add);
-  // }
-  //
-  // vm.add = addMovie;
+
 
 }
 
