@@ -43,6 +43,9 @@ function movieGroupsAddUser(req, res, next) {
           });
       }
     })
+    .then(group => {
+      return MovieGroup.populate(group, { path: 'users'});
+    })
     .then(group => res.status(200).json(group))
     .catch(next);
 }
@@ -57,6 +60,9 @@ function movieGroupsRemoveUser(req, res, next) {
       const index = group.users.indexOf(req.user.id);
       group.users.splice(index, 1);
       return group.save();
+    })
+    .then(group => {
+      return MovieGroup.populate(group, { path: 'users'});
     })
     .then(group => res.status(200).json(group))
     .catch(next);

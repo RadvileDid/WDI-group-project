@@ -45,7 +45,7 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
         vm.newComment = {};
       });
   }
-  
+
   function addOrCreateGroup() {
 
     MovieGroup
@@ -53,6 +53,7 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
       .$promise
       .then((response) => {
         vm.movieGroup.users = response.users;
+        // vm.isInGroup();
       });
   }
 
