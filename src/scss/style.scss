@@ -6,11 +6,6 @@ span {
   font-weight: bold;
 }
 
-img {
-  &.test {
-    min-height: 400px;
-  }
-}
 
 .noComments {
   padding: 40px;
@@ -30,10 +25,6 @@ select {
   margin: 15px 0;
 }
 
-.movie-search {
-
-}
-
 div {
   &.error{
     background: #fff0f4;
@@ -48,10 +39,6 @@ div {
 }
 
 
-// .ng-valid {
-//   color: green;
-// }
-
 input{
   &.input{
     &.ng-valid {
@@ -59,3 +46,17 @@ input{
     }
   }
 }
+
+
+.movie-search{
+  margin:20px 0 40px;
+}
+
+// div{
+//   &.card{
+//     &.test {
+//       padding: 0;
+//       margin: 0;
+//     }
+//   }
+// }
