@@ -46,12 +46,11 @@
       "css": "**/*.css",
       "scss": "**/*.scss",
       "html": "**/*.html",
-      "images": "**/*.{png,jpg,jpeg,gif,ico}",
+      "images": "**/*.{png,jpg,jpeg,gif,ico,svg}",
       "fonts": "**/*.{eot,svg,ttf,woff,woff2}"
     }
   },
   "dependencies": {
-    "angular-filepicker": "^1.1.4",
     "angular-messages": "^1.6.9",
     "bcrypt": "^1.0.3",
     "bluebird": "^3.5.1",

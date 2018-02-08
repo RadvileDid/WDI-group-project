@@ -2,7 +2,8 @@ angular
   .module('vamApp', [
     'ui.router',
     'ngResource',
-    'satellizer'
+    'satellizer',
+    'angular-filepicker'
   ])
   .directive('onError', function() {
     return {

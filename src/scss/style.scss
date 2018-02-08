@@ -1,6 +1,7 @@
 body{
   background-color: #F7F7F7;
   font-family: 'Open Sans', sans-serif;
+  color: #5b6061;
 }
 
 //navbar
@@ -9,11 +10,33 @@ div {
   &.nav-wrapper{
     background-color: #5b6061;
   }
-  a{
+  &.new-nav {
+    background-color: #F7F7F7;
+  }
+  a {
     &.brand-logo{
+      font-family: 'Courgette', cursive;
+      font-size: 45px;
       color: #ffb000f5;
+      font-size: 50px;
+      margin: 15px;
     }
   }
+}
+
+span {
+  &.brand-logo{
+    font-family: 'Courgette', cursive;
+    color: #ffb000f5;
+    font-size: 30px;
+  }
+}
+
+.landing-page-image {
+  margin-top: 10px;
+  margin-left: 10px; 
+  width: 8%;
+  height: auto;
 }
 
 nav.stroke ul li a,
@@ -39,20 +62,17 @@ nav.stroke ul li a:hover:after {
   width: 100%;
 }
 
+<<<<<<< HEAD
 .landing-page-image {
   padding: 20px;
   margin-right: 10px;
   margin-top: 10px;
 }
 
+=======
+>>>>>>> development
 .movie-chat {
   border: dashed;
-}
-
-a {
-  &.brand-logo {
-    margin-left: 10px;
-  }
 }
 
 p {
@@ -71,7 +91,7 @@ select {
 
 //form
 div {
-  &.error{
+  &.error {
     background: #fff0f4;
     color: #c51244;
     padding: 5px 0 15px;
@@ -102,6 +122,15 @@ textarea {
   margin: 15px 0;
 }
 
+.preview-image {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+input[type='file'] { //hacki
+  color: transparent;
+}
+
 .delete-button {
   margin: 8px;
   background-color: #c51244;
@@ -118,6 +147,8 @@ textarea {
   margin:20px 0 40px;
 }
 
+
+
 .movieCard{
   color: black;
   min-height: 587px;
@@ -130,8 +161,8 @@ textarea {
   &:hover{
     transform: translateY(-10px);
     -webkit-box-shadow: 0 20px 6px -13px rgba(0,0,0,0.15);
-        -moz-box-shadow: 0 20px 6px -13px rgba(0,0,0,0.15);
-              box-shadow: 0 20px 6px -13px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 20px 6px -13px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 6px -13px rgba(0,0,0,0.15);
 
   }
   img{
