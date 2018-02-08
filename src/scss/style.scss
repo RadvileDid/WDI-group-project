@@ -45,6 +45,14 @@ img {
   }
 }
 
+button {
+  &img {
+    &.magnifying-glass {
+        width: 100%;
+    }
+  }
+}
+
 
 nav.stroke ul li a,
 nav.fill ul li a {
