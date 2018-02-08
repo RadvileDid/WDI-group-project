@@ -4,16 +4,17 @@
   <title>WDI Group Project</title>
   <base href="/">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Courgette" rel="stylesheet">
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
-  <nav class="stroke">
+
+  <nav class="nav-extended stroke">
+    <!-- navbar -->
     <div class="nav-wrapper">
-      <a href="moviesIndex" class="brand-logo">Movie Hub</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a ui-sref="home">Movies</a></li>
         <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">My Profile</a></li>
@@ -22,53 +23,32 @@
         <li><a ng-click="main.logout()"  ng-if="main.isAuthenticated()">Logout</a></li>
       </ul>
     </div>
-  </nav>
-
-  <main ui-view>
-    <div class="col s12 m7">
-      <div class="card horizontal">
-        <div class="card-image">
-          <img class="landing-page-image" ng-src="images/popcorn-576599_640.png" alt="vector image of popcorn in a red and white striped box">
+      </nav>
+    <!-- "jumbotron" -->
+    <div class="new-nav">
+        <div class="new-nav">
+          <img class="landing-page-image" ng-src="images/camera.svg" alt="svg of an old film projector">
+          <a href="moviesIndex" class="brand-logo">Movie Hub</a>
+          <span class="brand-logo">A social hub for movie fans!</span>
         </div>
-        <div class="card-stacked">
-          <div class="card-content">
-            <form ng-submit="vm.submit()" name="form" class="col s12 formSpacing">
-              <div class="field">
-                <label class="label" for="email">Email</label>
-                <input class="input" type="email" name="email" id="email" ng-model="vm.credentials.email" required>
-                <div class="error" ng-show="form.email.$dirty && form.email.$invalid">
-                  <small class="error" ng-show="form.email.$error.required">Your email is required.</small>
-                  <small class="error" ng-show="form.email.$error.email">That is not a valid email. Please input a valid email.</small>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label" for="password">Password</label>
-                <input class="input" type="password" name="password" id="password" ng-model="vm.credentials.password" ng-minlength="5" g-maxlength="20" required>
-                <div class="error" ng-show="form.password.$dirty && form.password.$invalid">
-                  <small class="error" ng-show="form.password.$error.required">Your email is required.</small>
-                  <small class="error" ng-show="form.password.$error.minlength">Your passwordConfirmation is required to be at least 5 characters</small>
-                  <small class="error" ng-show="form.password.$error.maxlength">Your passwordConfirmation is required to be less than 20 characters</small>
-                </div>
-              </div>
-              <div class="field  center-align">
-                <input type="submit" class="btn formBtn" value="Login" ng-disabled="form.$invalid">
-              </div>
-            </form>
-            <div class="col s12 formSpacing">
-              <div class="center-align">
-                <a ui-sref="register" class="btn formBtn">Or Register</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i></a> -->
     </div>
-  </main>
+
+  <!-- old jumbotron -->
+  <!-- <div class="row jumbotron">
+  <div class="col s12 center-align">
+  <h4>Movie hub, a social hub for movie fans!</h4>
+  <img class="landing-page-image" ng-src="images/popcorn-576599.svg" alt="vector image of popcorn in a red and white striped box">
+</div>
+</div> -->
+
+<main ui-view></main>
 
 
-  <!-- <script>
-  $( document ).ready(() => {
-  $(".dropdown-button").dropdown();
+<!-- <script>
+$( document ).ready(() => {
+$(".dropdown-button").dropdown();
 })
 </script> -->
 </body>
