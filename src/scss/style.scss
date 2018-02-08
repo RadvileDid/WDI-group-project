@@ -133,6 +133,7 @@ button {
       background-color: darken(#5b6061, 2%);
     }
   }
+  // this may not be working, must test
   &.btn-large {
     background-color: darken(#5b6061, 2%);
   }
@@ -141,7 +142,7 @@ button {
   }
 }
 
-.btn:hover .btn-large:hover {
+.btn:hover, .btn-large:hover {
   background-color: darken(#5b6061, 2%);
 }
 
