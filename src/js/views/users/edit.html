@@ -4,7 +4,7 @@
       <form ng-submit="vm.userUpdate()"  name="form" class="col s12 formSpacing">
         <div class="field">
           <label class="label" for="email">Username</label>
-          <input class="input" type="text" name="username" id="username" ng-model="vm.user.username"  ng-minlength=3 ng-maxlength=30 required>
+          <input class="input" type="text" name="username" id="username" ng-model="vm.user.username"  ng-minlength="3" ng-maxlength="30" required>
           <div class="error" ng-show="form.username.$dirty && form.username.$invalid">
             <small class="error" ng-show="form.username.$error.required"> Your username is required.</small>
             <small class="error" ng-show="form.username.$error.minlength">Your username is required to be at least 3 characters</small>
@@ -28,7 +28,7 @@
         </div>
         <div>
           <label class="label" for="quote">Favourite movie quote</label>
-          <input type="text" class="input" name="quote" id="quote" ng-model="vm.user.quote" ng-minlength=5 required>
+          <input type="text" class="input" name="quote" id="quote" ng-model="vm.user.quote" ng-minlength="5" required>
           <div class="error" ng-show="form.quote.$dirty && form.quote.$invalid">
             <small class="error" ng-show="form.quote.$error.required">Your favourite movie quote is required.</small>
             <small class="error" ng-show="form.quote.$error.minlength">Movie quote is required to be at least 5 characters</small>

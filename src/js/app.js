@@ -3,4 +3,5 @@ angular
     'ui.router',
     'ngResource',
     'satellizer'
+    // 'angular-filepicker'
   ]);
