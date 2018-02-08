@@ -23,6 +23,16 @@ select {
   margin: 15px 0;
 }
 
+.cardSpacing{
+  margin-top: 10px;
+}
+
+label {
+  &.label-icon{
+    margin-top: -10px;
+  }
+}
+
 //navbar
 
 div {
