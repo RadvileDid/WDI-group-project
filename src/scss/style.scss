@@ -4,6 +4,25 @@ body{
   color: #5b6061;
 }
 
+p {
+  padding: 5px;
+}
+
+span {
+  font-weight: 600;
+  font-size: 16px;
+  &.brand-logo{
+    font-family: 'Courgette', cursive;
+    color: #ffb000f5;
+    font-size: 30px;
+  }
+}
+
+
+select {
+  margin: 15px 0;
+}
+
 //navbar
 
 div {
@@ -21,34 +40,6 @@ div {
       font-size: 50px;
       margin: 15px;
     }
-  }
-}
-
-span {
-  &.brand-logo{
-    font-family: 'Courgette', cursive;
-    color: #ffb000f5;
-    font-size: 30px;
-  }
-}
-
-img {
-  &.landing-page-image {
-    margin-top: 10px;
-    margin-left: 10px;
-    width: 8%;
-    height: auto;
-  }
-  &.show-page-image {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-
-img {
-  &.magnifying-glass {
-    padding-top: 3px;
-    width: 60%;
   }
 }
 
@@ -75,22 +66,16 @@ nav.stroke ul li a:hover:after {
   width: 100%;
 }
 
-p {
-  padding: 5px;
-}
-
-span {
-  font-weight: 600;
-  font-size: 16px;
-}
-
-
-select {
-  margin: 15px 0;
-}
-
 //form
 div {
+  &.profile-image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &.profile-page{
+    padding-top: 20px;
+  }
   &.error {
     background: #fff0f4;
     color: #c51244;
@@ -156,25 +141,26 @@ button {
   }
 }
 
+.btn:hover .btn-large:hover {
+  background-color: darken(#5b6061, 2%);
+}
+
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid lighten(#5b6061, 15%);
   -webkit-box-shadow: 0 1px 0 0 lighten(#5b6061, 15%);
   box-shadow: 0 1px 0 0 lighten(#5b6061, 15%);
 }
 
-
-.formBtn{
-  margin: 15px 0;
+.btn, .btn-large {
+    text-decoration: none;
+    color: #fff;
+    background-color: darken(#5b6061, 2%);
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: .2s ease-out;
+    transition: .2s ease-out;
+    cursor: pointer;
 }
-
-.preview-image {
-  max-width: 150px;
-  max-height: 150px;
-}
-
-// input[type='file'] { //hacki
-//   color: transparent;
-// }
 
 .delete-button {
   margin: 8px;
@@ -187,12 +173,33 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
   display: inline-block;
 }
 
+// images
+img {
+  &.landing-page-image {
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-bottom: -9px;
+    width: 8%;
+    height: auto;
+  }
+  &.show-page-image {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  &.magnifying-glass {
+    padding-top: 3px;
+    width: 60%;
+  }
+  &.preview-image {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
 //movies show page
 .movie-search{
   margin:20px 0 40px;
 }
-
-
 
 .movieCard{
   color: black;
@@ -217,17 +224,6 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 
 .titleSize{
   padding: 15px;
-}
-
-//user profile
-.profileImage{
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.profilePage{
-  padding-top: 20px;
 }
 
 blockquote{

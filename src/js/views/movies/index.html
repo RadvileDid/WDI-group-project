@@ -18,7 +18,7 @@
     <div ng-repeat="movie in vm.all">
       <a ui-sref="movieShow({ id: movie.id })">
         <div class="col l4 m6 s12">
-          <div class="movieCard card">
+          <div class="card movieCard">
             <img ng-src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path}}" on-error="https://www.bathroomcity.co.uk/sites/default/files/default_images/no_image_available_2.png" alt="Movie poster not available" class="responsive-img">
             <h5 class="titleSize center-align truncate">{{ movie.title }}</h5>
           </div>
