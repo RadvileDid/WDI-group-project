@@ -1,21 +1,17 @@
-<div class="container">
+<div class="container profilePage">
   <div class="col s12 m7">
-    <div class="card horizontal">
-      <div class="card-image">
-        <img ng-src="{{ vm.user.profilePicture }}">
-      </div>
+    <div class="card horizontal test">
+      <div style="background-image: url({{ vm.user.profilePicture }}); height: 500px; width: 350px;" class="profileImage"></div>
+      <!-- <img ng-src="{{ vm.user.profilePicture }}" class="profile-image"> -->
       <div class="card-stacked">
         <div class="card-content">
           <h2 class="header">{{ vm.user.username }}'s profile</h2>
-          <p>Favourite movie quote: {{ vm.user.quote }}</p>
-          <p>Favourite movie genre: {{ vm.user.genre}}</p>
+          <p><span>Favourite movie quote:</span> <blockquote>"{{ vm.user.quote }}"</blockquote></p>
+          <p><span>Favourite movie genre:</span> {{ vm.user.genre}}</p>
         </div>
-        <div class="card-content">
-
-        </div>
-        <div class="card-action">
-          <button class="btn" ui-sref="usersEdit({ id: vm.user.id })" ng-if="main.isAuthenticated() && main.currentUserId === vm.user.id">Edit Profile</button>
-          <button class="btn" ng-click="vm.userDelete()" ng-if="main.isAuthenticated() && main.currentUserId === vm.user.id">Delete Profile</button>
+        <div class="card-action center-align">
+          <button class="btn" ui-sref="usersEdit({ id: vm.user.id })" ng-if="main.isAuthenticated() && main.currentUserId === vm.user.id">Edit</button>
+          <button class="btn" ng-click="vm.userDelete()" ng-if="main.isAuthenticated() && main.currentUserId === vm.user.id">Delete</button>
         </div>
       </div>
     </div>
