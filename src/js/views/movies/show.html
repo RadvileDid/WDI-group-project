@@ -1,72 +1,59 @@
+<div class="row section">
+  <!-- div one: movie poster image -->
+  <div class="col s4">
 
-<div>
-  <div class="col s12 m7">
-    <div class="card horizontal">
-      <div class="card-image">
-        <img ng-src="https://image.tmdb.org/t/p/w500/{{ vm.movie.poster_path}}" alt="movie poster" class="test responsive-img">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <h3>{{vm.movie.title}}</h3>
-          <p>{{vm.movie.overview}}</p>
-          <p><span>Rating: </span> {{vm.movie.vote_average}}/10 ( {{vm.movie.vote_count}} total votes )</p>
-          <p><span>Release date: </span> {{vm.movie.release_date}}</p>
-          <p><span>Genre:</span> {{vm.movie.genres[0].name}}, {{vm.movie.genres[1].name}}</p>
-          <p><span>Language:</span> {{vm.movie.spoken_languages[0].name}}</p>
-        </div>
-        <div class="join-group">
-          <div class="row">
-            <div class="col s12">
-              <button class="btn" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join Group</button>
-              <button class="btn" ng-show="vm.isInGroup()" ng-click="vm.remove()">Leave Group</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <img ng-src="https://image.tmdb.org/t/p/w500/{{ vm.movie.poster_path}}" alt="movie poster" class="responsive-img">
+
   </div>
-  <!-- <div class="users col s12 m7"> -->
-
-  <ul>
-    <li  class="user-group" ng-repeat="user in vm.movieGroup.users">
-      <a ui-sref="usersShow({ id: user.id })">
-        <div class="chip">
-          <img ng-src="{{ user.profilePicture }}">{{ user.username }}
-        </div>
-      </a>
-    </li>
-  </ul>
-
-
-  <!-- </div> -->
-  <div class="row">
-    <h5 class="center-align">Comments</h5>
-
-    <div class="card">
-      <p class="noComments" ng-if="!vm.movieGroup.comments.length">No comments yet...</p>
-      <ul class="comments__created">
-        <li ng-repeat="comment in vm.movieGroup.comments track by $index"  class="card-content">
-          <p>{{ comment.text }}<a ui-sref="usersShow({ id: comment.createdBy.id })"><strong> - {{ comment.createdBy.username }}</strong></a>
-            <button class="button" ng-click="vm.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">Delete</button></p>
+  <!-- div two: movie info, group members, button actions -->
+  <div class="col s4">
+      <div class="row">
+        <!-- movie info -->
+        <h4>{{vm.movie.title}}</h4>
+        <p>{{vm.movie.overview}}</p>
+        <p><span>Rating: </span> {{vm.movie.vote_average}}/10 ( {{vm.movie.vote_count}} total votes )</p>
+        <p><span>Release date: </span> {{vm.movie.release_date}}</p>
+        <p><span>Genre:</span> {{vm.movie.genres[0].name}}, {{vm.movie.genres[1].name}}</p>
+        <p><span>Language:</span> {{vm.movie.spoken_languages[0].name}}</p>
+        <!-- user chips -->
+        <ul>
+          <li class="user-group" ng-repeat="user in vm.movieGroup.users">
+            <a ui-sref="usersShow({ id: user.id })">
+              <div class="chip">
+                <img ng-src="{{ user.profilePicture }}">{{ user.username }}
+              </div>
+            </a>
           </li>
         </ul>
+        <!-- button actions -->
+        <div>
+          <a href="/login" class="btn" ng-if="!main.isAuthenticated()">Login to join a group!</a>
+          <!-- user will lose the page they were on... fix this?! -->
+          <button class="btn" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join Group</button>
+          <button class="btn" ng-show="vm.isInGroup()" ng-click="vm.remove()">Leave Group</button>
+        </div>
+      </div>
+  </div>
+  <!-- div three: comments block -->
+  <div class="col s4 center-align">
+      <!-- comments posted -->
+      <div class="row movie-chat">
+        <h4>Movie Chat</h4>
+        <div class="divider"></div>
+        <div ng-repeat="comment in vm.movieGroup.comments track by $index">
+          <p>{{ comment.text }}<a ui-sref="usersShow({ id: comment.createdBy.id })"><strong> - {{ comment.createdBy.username }}</strong></a><button class="delete-button" ng-click="vm.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">Delete</button></p>
+        </div>
+      </div>
+      <!-- add a comment -->
+      <div class="row">
+        <form ng-show="vm.isInGroup()" ng-submit="vm.addComment()" >
+          <textarea ng-model="vm.newComment.text" placeholder="Leave your comment here..." class="center-align"></textarea>
+          <button class="btn">Add</button>
+        </form>
+        <button class="btn" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join Group to add a comment!</button>
       </div>
   </div>
 </div>
 
-      <div class="card">
-        <div class="card-content">
-          <form ng-submit="vm.addComment()" >
-            <textarea ng-model="vm.newComment.text" placeholder="Leave your comment here..." class="center-align"></textarea>
-            <div class="row">
-              <div class="col s4"></div>
-              <button class="btn col s4" ng-show="vm.isInGroup()">Add</button>
-              <button class="btn" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join Group to add a comment!</button>
-              <div class="col s4"></div>
-            </div>
-          </form>
-        </div>
-      </form>
-    </div>
   </div>
 </div>
