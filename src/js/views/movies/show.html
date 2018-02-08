@@ -46,9 +46,9 @@
       </div>
       <!-- add a comment -->
       <div class="row">
-        <form ng-submit="vm.addComment()" >
+        <form ng-show="vm.isInGroup()" ng-submit="vm.addComment()" >
           <textarea ng-model="vm.newComment.text" placeholder="Leave your comment here..." class="center-align"></textarea>
-          <button class="btn" ng-show="vm.isInGroup()">Add</button>
+          <button class="btn">Add</button>
         </form>
         <button class="btn" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join Group to add a comment!</button>
       </div>
