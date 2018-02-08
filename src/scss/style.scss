@@ -45,14 +45,12 @@ img {
   }
 }
 
-button {
-  &img {
-    &.magnifying-glass {
-        width: 100%;
-    }
+img {
+  &.magnifying-glass {
+    padding-top: 3px;
+    width: 60%;
   }
 }
-
 
 nav.stroke ul li a,
 nav.fill ul li a {
@@ -130,7 +128,40 @@ textarea {
   border: none;
 }
 
+label {
+  font-size: 15px;
+  color: lighten(#5b6061, 15%);
+}
+
 //buttons
+
+button {
+  &.btn{
+    background-color: lighten(#5b6061, 25%);
+    &:focus {
+      background-color: lighten(#5b6061, 5%);
+      border-bottom: 1px solid lighten(#5b6061, 5%);
+      -webkit-box-shadow: 0 1px 0 0 lighten(#5b6061, 5%);
+      box-shadow: 0 1px 0 0 lighten(#5b6061, 5%);
+    }
+    &:hover {
+      background-color: darken(#5b6061, 2%);
+    }
+  }
+  &.btn-large {
+    background-color: darken(#5b6061, 2%);
+  }
+  &.btn-large:hover {
+    background-color: darken(#5b6061, 2%);
+  }
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid lighten(#5b6061, 15%);
+  -webkit-box-shadow: 0 1px 0 0 lighten(#5b6061, 15%);
+  box-shadow: 0 1px 0 0 lighten(#5b6061, 15%);
+}
+
 
 .formBtn{
   margin: 15px 0;

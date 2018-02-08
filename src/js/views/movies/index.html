@@ -1,17 +1,19 @@
 <div class="container">
-    <div class="row movie-search">
-      <div class="col s10">
-        <input ng-model="vm.search">
-      </div>
-      <!-- <div class="col s1">
-        <img class="magnifying-glass" src="../images/magnifying-glass.svg" alt="">
-      </div> -->
-      <div class="col s2">
-          <form ng-submit="vm.findMovie()">
-            <button class="btn" type="submit" name="button" ><img class="magnifying-glass" src="../images/magnifying-glass.svg" alt=""></button>
-          </form>
-      </div>
+  <!-- search for a movie -->
+  <div class="row movie-search">
+    <div class="col s10">
+      <input ng-model="vm.search">
     </div>
+    <!-- <div class="col s1">
+      <img class="magnifying-glass" src="../images/magnifying-glass.svg" alt="">
+    </div> -->
+    <div class="col s2">
+        <form ng-submit="vm.findMovie()">
+          <button class="btn" type="submit" name="button" ><img class="magnifying-glass" src="../images/magnifying-glass.svg" alt=""></button>
+        </form>
+    </div>
+  </div>
+  <!-- Movies start here -->
   <div class="row">
     <div ng-repeat="movie in vm.all">
       <a ui-sref="movieShow({ id: movie.id })">
