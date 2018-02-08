@@ -40,8 +40,6 @@ nav.stroke ul li a:hover:after {
 }
 
 
-
-
 .landing-page-image {
   padding: 20px;
   margin-right: 10px;
@@ -158,4 +156,8 @@ input[type='file'] { //hacki
 
 h4{
   border-bottom: 1px solid lightGrey;
+}
+
+.movie-info { //not working
+  font-weight: 100;
 }

@@ -11,8 +11,8 @@
         <!-- movie info -->
         <h4>{{vm.movie.title}}</h4>
         <p>{{vm.movie.overview}}</p>
-        <p><span>Rating: </span> {{vm.movie.vote_average}}/10 ( {{vm.movie.vote_count}} total votes )</p>
-        <p><span>Release date: </span> {{vm.movie.release_date}}</p>
+        <p><span>Rating:</span> {{vm.movie.vote_average}}/10 ( {{vm.movie.vote_count}} total votes )</p>
+        <p><span>Release date:</span> {{vm.movie.release_date}}</p>
         <p><span>Genre:</span> {{vm.movie.genres[0].name}}, {{vm.movie.genres[1].name}}</p>
         <p><span>Language:</span> {{vm.movie.spoken_languages[0].name}}</p>
         <!-- user chips -->
@@ -52,8 +52,5 @@
         </form>
         <button class="btn" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join Group to add a comment!</button>
       </div>
-  </div>
-</div>
-
   </div>
 </div>
