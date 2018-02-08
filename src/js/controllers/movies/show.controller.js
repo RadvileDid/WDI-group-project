@@ -6,7 +6,10 @@ MovieCtrl.$inject = ['$http', '$state', 'MovieGroup', '$auth'];
 function MovieCtrl($http, $state, MovieGroup, $auth) {
   const apiKey = '1d4fa77475568ca9a63fb4a287dd496b';
   const vm = this;
-  const currentUserId = $auth.getPayload().userId;
+
+  if($auth.getPayload()) {
+    vm.currentUserId = $auth.getPayload().userId;
+  }
 
   vm.addComment = addComment;
   vm.add        = addOrCreateGroup;
@@ -61,7 +64,7 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
   }
 
   function isInGroup() {
-    return vm.movieGroup && $auth.isAuthenticated() && (vm.movieGroup.users.some(user => user.id === currentUserId));
+    return vm.movieGroup && $auth.isAuthenticated() && (vm.movieGroup.users.some(user => user.id === vm.currentUserId));
   }
 
 
