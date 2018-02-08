@@ -26,9 +26,14 @@
             <small class="error" ng-show="form.profilePicture.$error.required">Your profile picture URL is required.</small>
           </div>
 
+          <br>
+
           <div ng-if="vm.user.profilePicture">
             <img class="preview-image" src="{{ vm.user.profilePicture}}">
           </div>
+
+          <br>
+          <br>
 
           <div>
             <label class="label" for="quote">Favourite movie quote</label>
