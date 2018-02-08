@@ -10,11 +10,36 @@ div {
   &.nav-wrapper{
     background-color: #5b6061;
   }
-  a{
+  &.new-nav {
+    background-color: #F7F7F7;
+  }
+  a {
     &.brand-logo{
+      font-family: 'Courgette', cursive;
+      font-size: 45px;
       color: #ffb000f5;
+      padding: 20px;
+      padding-left: 35px;
     }
   }
+}
+
+span {
+  &.brand-logo{
+    font-family: 'Courgette', cursive;
+    color: #ffb000f5;
+    padding: 5px;
+    margin-top: -80px;
+    margin-left: 135px;
+  }
+}
+
+.landing-page-image {
+  padding-top: 25px;
+  margin-right: 5px;
+  margin-left: 10px;
+  width: 6%;
+  height: auto;
 }
 
 nav.stroke ul li a,
@@ -40,27 +65,8 @@ nav.stroke ul li a:hover:after {
   width: 100%;
 }
 
-
-
-
-.landing-page-image {
-  width: 20%;
-  height: auto;
-}
-
 .movie-chat {
   border: dashed;
-}
-
-.jumbo {
-  flex-direction: row;
-  justify-content: center;
-}
-
-a {
-  &.brand-logo {
-    margin-left: 10px;
-  }
 }
 
 p {
