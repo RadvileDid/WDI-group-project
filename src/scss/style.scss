@@ -4,6 +4,10 @@
   margin-top: 10px;
 }
 
+.movie-chat {
+  border: dashed;
+}
+
 a {
   &.brand-logo {
     margin-left: 10px;
@@ -16,12 +20,6 @@ p {
 
 span {
   font-weight: bold;
-}
-
-
-.noComments {
-  padding: 40px;
-  text-align: center;
 }
 
 textarea {
@@ -50,6 +48,12 @@ div {
   margin: 15px 0;
 }
 
+.delete-button {
+  margin: 8px;
+  background-color: #c51244;
+  color: white;
+  border-radius: 4px;
+}
 
 input{
   &.input{
@@ -61,10 +65,6 @@ input{
 
 .user-group {
   display: inline-block;
-}
-
-.join-group {
-  align-self: center;
 }
 
 .movie-search{
