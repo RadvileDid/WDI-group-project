@@ -15,7 +15,7 @@
     <div class="nav-wrapper">
       <a href="moviesIndex" class="brand-logo">Movie Hub</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a ui-sref="home">Movies</a></li>
+        <li class="active"><a ui-sref="home">Movies</a></li>
         <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">My Profile</a></li>
         <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
         <li><a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a></li>
