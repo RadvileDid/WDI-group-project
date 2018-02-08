@@ -9,7 +9,9 @@ function MoviesIndexCtrl($http) {
 
   const vm = this;
 
-  vm.findPopularMovies = findPopularMovies;
+  // vm.findPopularMovies = findPopularMovies;
+  vm.currentlyScreeningMovies = currentlyScreeningMovies;
+  findPopularMovies();
 
   function findPopularMovies() {
     $http
@@ -18,6 +20,16 @@ function MoviesIndexCtrl($http) {
         vm.all = res.data.results;
       });
   }
+
+  function currentlyScreeningMovies() {
+    $http
+      .get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=1`)
+      .then(res => {
+        vm.all = res.data.results;
+      });
+  }
+
+
 
 
   vm.findMovie = findMovie;
