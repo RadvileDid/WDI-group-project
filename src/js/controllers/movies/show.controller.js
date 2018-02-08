@@ -12,6 +12,7 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
   vm.add        = addOrCreateGroup;
   vm.remove = leaveMovieGroup;
   vm.isInGroup = isInGroup;
+  vm.deleteComment = deleteComment;
 
   MovieGroup
     .get({ id: $state.params.id })
@@ -40,30 +41,23 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
       .addComment({ id: vm.movie.id }, vm.newComment)
       .$promise
       .then((comment) => {
-        console.log(comment);
         vm.movieGroup.comments.push(comment);
         vm.newComment = {};
       });
   }
 
   function addOrCreateGroup() {
-
     MovieGroup
       .addUser({ id: $state.params.id }) // movie id from the themoviedb API
       .$promise
-      .then((response) => {
-        vm.movieGroup.users = response.users;
-        // vm.isInGroup();
-      });
+      .then(response => vm.movieGroup = response);
   }
 
   function leaveMovieGroup() {
     MovieGroup
       .leaveMovieGroup({ id: $state.params.id })
       .$promise
-      .then((response) => {
-        vm.movieGroup.users = response.users;
-      });
+      .then(response => vm.movieGroup = response);
   }
 
   function isInGroup() {
@@ -80,10 +74,6 @@ function MovieCtrl($http, $state, MovieGroup, $auth) {
         vm.movieGroup.comments.splice(index, 1);
       });
   }
-
-  vm.deleteComment = deleteComment;
-
-
 }
 
 
