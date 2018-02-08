@@ -11,9 +11,8 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
-
+  <!-- navbar -->
   <nav class="nav-extended stroke">
-    <!-- navbar -->
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a ui-sref="home">Movies</a></li>
@@ -23,32 +22,22 @@
         <li><a ng-click="main.logout()"  ng-if="main.isAuthenticated()">Logout</a></li>
       </ul>
     </div>
-      </nav>
-    <!-- "jumbotron" -->
+  </nav>
+  <!-- "jumbotron" -->
+  <div class="new-nav">
     <div class="new-nav">
-        <div class="new-nav">
-          <img class="landing-page-image" ng-src="images/camera.svg" alt="svg of an old film projector">
-          <a href="moviesIndex" class="brand-logo">Movie Hub</a>
-          <span class="brand-logo">A social hub for movie fans!</span>
-        </div>
-        <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
-        <i class="material-icons">add</i></a> -->
+      <img class="landing-page-image" ng-src="images/camera.svg" alt="svg of an old film projector">
+      <a href="moviesIndex" class="brand-logo">Movie Hub</a>
+      <span class="brand-logo">A social hub for movie fans!</span>
     </div>
+  </div>
 
-  <!-- old jumbotron -->
-  <!-- <div class="row jumbotron">
-  <div class="col s12 center-align">
-  <h4>Movie hub, a social hub for movie fans!</h4>
-  <img class="landing-page-image" ng-src="images/popcorn-576599.svg" alt="vector image of popcorn in a red and white striped box">
-</div>
-</div> -->
-
-<main ui-view></main>
+  <main ui-view></main>
 
 
-<!-- <script>
-$( document ).ready(() => {
-$(".dropdown-button").dropdown();
+  <!-- <script>
+  $( document ).ready(() => {
+  $(".dropdown-button").dropdown();
 })
 </script> -->
 </body>

@@ -1,15 +1,14 @@
-<div class="row section">
-  <!-- div one: movie poster image -->
-  <div class="col s4">
-
-        <img ng-src="https://image.tmdb.org/t/p/w500/{{ vm.movie.poster_path}}" alt="movie poster" class="responsive-img">
-
-  </div>
-  <!-- div two: movie info, group members, button actions -->
-  <div class="col s4">
+<!-- main row all content -->
+  <div class="row section">
+    <!-- div one: movie poster image -->
+    <div class="col s4">
+      <img ng-src="https://image.tmdb.org/t/p/w500/{{ vm.movie.poster_path}}" alt="movie poster" class="responsive-img show-page-image">
+    </div>
+    <!-- div two: movie info, group members, button actions -->
+    <div class="col s8 show-padding">
       <div class="row">
         <!-- movie info -->
-        <h4>{{vm.movie.title}}</h4>
+        <h4 class="center-align">{{vm.movie.title}}</h4>
         <p>{{vm.movie.overview}}</p>
         <p><span>Rating: </span> {{vm.movie.vote_average}}/10 ( {{vm.movie.vote_count}} total votes )</p>
         <p><span>Release date: </span> {{vm.movie.release_date}}</p>
@@ -29,17 +28,14 @@
         <div>
           <a href="/login" class="btn" ng-if="!main.isAuthenticated()">Login to join a group!</a>
           <!-- user will lose the page they were on... fix this?! -->
-          <button class="btn" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join Group</button>
+          <button class="btn" ng-if="main.isAuthenticated()" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join Group</button>
           <button class="btn" ng-show="vm.isInGroup()" ng-click="vm.remove()">Leave Group</button>
         </div>
       </div>
-  </div>
-  <!-- div three: comments block -->
-  <div class="col s4 center-align">
+    <!-- div three: comments block -->
       <!-- comments posted -->
-      <div class="row movie-chat">
+      <div class="row movie-chat center-align">
         <h4>Movie Chat</h4>
-        <div class="divider"></div>
         <div ng-repeat="comment in vm.movieGroup.comments track by $index">
           <p>{{ comment.text }}<a ui-sref="usersShow({ id: comment.createdBy.id })"><strong> - {{ comment.createdBy.username }}</strong></a><button class="delete-button" ng-click="vm.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">Delete</button></p>
         </div>
@@ -50,10 +46,7 @@
           <textarea ng-model="vm.newComment.text" placeholder="Leave your comment here..." class="center-align"></textarea>
           <button class="btn">Add</button>
         </form>
-        <button class="btn" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join Group to add a comment!</button>
+        <button class="btn" ng-show="!vm.isInGroup()" ng-click="vm.add()">Join to Comment</button>
       </div>
+    </div>
   </div>
-</div>
-
-  </div>
-</div>
