@@ -18,12 +18,6 @@ span {
   font-weight: bold;
 }
 
-
-.noComments {
-  padding: 40px;
-  text-align: center;
-}
-
 textarea {
   border: none;
 }
@@ -50,6 +44,12 @@ div {
   margin: 15px 0;
 }
 
+.delete-button {
+  margin: 8px;
+  background-color: #c51244;
+  color: white;
+  border-radius: 4px;
+}
 
 input{
   &.input{
@@ -61,10 +61,6 @@ input{
 
 .user-group {
   display: inline-block;
-}
-
-.join-group {
-  align-self: center;
 }
 
 .movie-search{
