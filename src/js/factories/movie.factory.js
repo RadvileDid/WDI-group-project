@@ -1,6 +1,6 @@
 angular
   .module('vamApp')
-  .factory('MovieGroup', MovieGroup),
+  .factory('MovieGroup', MovieGroup);
 
 MovieGroup.$inject = ['$resource'];
 function MovieGroup($resource) {
