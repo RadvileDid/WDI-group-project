@@ -44,7 +44,7 @@ function movieGroupsAddUser(req, res, next) {
       }
     })
     .then(group => {
-      return MovieGroup.populate(group, { path: 'users'});
+      return MovieGroup.populate(group, { path: 'users comments.createdBy'});
     })
     .then(group => res.status(200).json(group))
     .catch(next);
@@ -62,7 +62,7 @@ function movieGroupsRemoveUser(req, res, next) {
       return group.save();
     })
     .then(group => {
-      return MovieGroup.populate(group, { path: 'users'});
+      return MovieGroup.populate(group, { path: 'users comments.createdBy'});
     })
     .then(group => res.status(200).json(group))
     .catch(next);
