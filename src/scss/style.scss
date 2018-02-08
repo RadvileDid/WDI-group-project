@@ -81,7 +81,7 @@ select {
 
 //form
 div {
-  &.error{
+  &.error {
     background: #fff0f4;
     color: #c51244;
     padding: 5px 0 15px;
@@ -112,6 +112,15 @@ textarea {
   margin: 15px 0;
 }
 
+.preview-image {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+input[type='file'] { //hacki
+  color: transparent;
+}
+
 .delete-button {
   margin: 8px;
   background-color: #c51244;
@@ -128,6 +137,8 @@ textarea {
   margin:20px 0 40px;
 }
 
+
+
 .movieCard{
   color: black;
   min-height: 587px;
@@ -140,8 +151,8 @@ textarea {
   &:hover{
     transform: translateY(-10px);
     -webkit-box-shadow: 0 20px 6px -13px rgba(0,0,0,0.15);
-        -moz-box-shadow: 0 20px 6px -13px rgba(0,0,0,0.15);
-              box-shadow: 0 20px 6px -13px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 20px 6px -13px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 6px -13px rgba(0,0,0,0.15);
 
   }
   img{
