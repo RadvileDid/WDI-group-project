@@ -9,7 +9,8 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'js/views/static/home.html'
+      templateUrl: '/js/views/movies/index.html',
+      controller: 'MoviesIndexCtrl as vm'
     })
     .state('login', {
       url: '/login',
@@ -31,11 +32,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: '/js/views/users/edit.html',
       controller: 'UsersEditCtrl as vm'
     })
-    .state('moviesIndex', {
-      url: '/movies',
-      templateUrl: '/js/views/movies/index.html',
-      controller: 'MoviesIndexCtrl as vm'
-    })
+    // .state('moviesIndex', {
+    //   url: '/movies',
+    //   templateUrl: '/js/views/movies/index.html',
+    //   controller: 'MoviesIndexCtrl as vm'
+    // })
     .state('movieShow', {
       url: '/movie/:id',
       templateUrl: '/js/views/movies/show.html',
