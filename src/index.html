@@ -10,82 +10,29 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
-  <nav>
-    <div class="nav-wrapper cyan lighten-1">
-      <a href="moviesIndex" class="brand-logo">Movie Hub</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a ui-sref="moviesIndex">Movies</a></li>
-        <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">Profile</a></li>
-        <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">My Profile</a></li>
-        <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
-        <li><a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a></li>
-        <li><a ng-click="main.logout()"  ng-if="main.isAuthenticated()">Logout</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <main ui-view>
-
-  <div class="field">
-    <label class="label">Profile Picture</label>
-    <div class="control">
-      <div class="file">
-        <label class="file-label">
-          <input class="file-input" type="file" ng-model="vm.newUser.image" upload-image>
-          <span class="file-cta">
-            <span class="file-icon">
-              <i class="fa fa-upload"></i>
-            </span>
-            <span class="file-label">
-              Choose a file…
-            </span>
-          </span>
-        </label>
+    <nav>
+      <div class="nav-wrapper cyan lighten-1">
+        <a href="moviesIndex" class="brand-logo">Movie Hub</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a ui-sref="moviesIndex">Movies</a></li>
+          <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">Profile</a></li>
+          <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">My Profile</a></li>
+          <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
+          <li><a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a></li>
+          <li><a ng-click="main.logout()"  ng-if="main.isAuthenticated()">Logout</a></li>
+        </ul>
       </div>
-    </div>
-  </div>
+    </nav>
 
-
-  <main class="container" ui-view>
-    <div class="col s12 m7">
-      <div class="card horizontal">
-        <div class="card-image">
-          <img class="landing-page-image" ng-src="images/popcorn-576599_640.png" alt="vector image of popcorn in a red and white striped box">
+  <!-- jumbotron -->
+    <div class="row">
+        <div class="col s12 center-align">
+          <h4>Movie hub, a social hub for movie fans!</h4>
+          <img class="landing-page-image" ng-src="images/popcorn-576599.svg" alt="vector image of popcorn in a red and white striped box">
         </div>
-        <div class="card-stacked">
-          <div class="card-content">
-            <form ng-submit="vm.submit()" name="form" class="col s12 formSpacing">
-              <div class="field">
-                <label class="label" for="email">Email</label>
-                <input class="input" type="email" name="email" id="email" ng-model="vm.credentials.email" required>
-                <div class="error" ng-show="form.email.$dirty && form.email.$invalid">
-                  <small class="error" ng-show="form.email.$error.required">Your email is required.</small>
-                  <small class="error" ng-show="form.email.$error.email">That is not a valid email. Please input a valid email.</small>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label" for="password">Password</label>
-                <input class="input" type="password" name="password" id="password" ng-model="vm.credentials.password" ng-minlength="5" g-maxlength="20" required>
-                <div class="error" ng-show="form.password.$dirty && form.password.$invalid">
-                  <small class="error" ng-show="form.password.$error.required">Your email is required.</small>
-                  <small class="error" ng-show="form.password.$error.minlength">Your passwordConfirmation is required to be at least 5 characters</small>
-                  <small class="error" ng-show="form.password.$error.maxlength">Your passwordConfirmation is required to be less than 20 characters</small>
-                </div>
-              </div>
-              <div class="field  center-align">
-                <input type="submit" class="btn formBtn" value="Login" ng-disabled="form.$invalid">
-              </div>
-            </form>
-            <div class="col s12 formSpacing">
-              <div class="center-align">
-                <a ui-sref="register" class="btn formBtn">Or Register</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </main>
+</main>
 
 
   <!-- <script>

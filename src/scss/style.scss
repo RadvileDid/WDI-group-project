@@ -1,11 +1,19 @@
+body {
+  color: #5b6061;
+}
+
 .landing-page-image {
-  padding: 20px;
-  margin-right: 10px;
-  margin-top: 10px;
+  width: 20%;
+  height: auto;
 }
 
 .movie-chat {
   border: dashed;
+}
+
+.jumbo {
+  flex-direction: row;
+  justify-content: center;
 }
 
 a {
