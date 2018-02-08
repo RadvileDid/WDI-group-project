@@ -32,12 +32,19 @@ span {
   }
 }
 
-.landing-page-image {
-  margin-top: 10px;
-  margin-left: 10px;
-  width: 8%;
-  height: auto;
+img {
+  &.landing-page-image {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 8%;
+    height: auto;
+  }
+  &.show-page-image {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
+
 
 nav.stroke ul li a,
 nav.fill ul li a {
@@ -62,6 +69,11 @@ nav.stroke ul li a:hover:after {
   width: 100%;
 }
 
+<<<<<<< HEAD
+// .movie-chat {
+//   border: dashed;
+// }
+=======
 .landing-page-image {
   padding: 20px;
   margin-right: 10px;
@@ -71,6 +83,7 @@ nav.stroke ul li a:hover:after {
 .movie-chat {
   border: dashed;
 }
+>>>>>>> development
 
 p {
   padding: 5px;
@@ -93,6 +106,18 @@ div {
     color: #c51244;
     padding: 5px 0 15px;
     border-radius: 5px;
+  }
+  &.col {
+    &.show-padding {
+      &.s4 {
+        padding-left: 25px;
+        padding-right: 25px;
+        &.center-align {
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+      }
+    }
   }
 }
 
