@@ -14,8 +14,7 @@ function UsersEditCtrl($state, UserFactory) {
     UserFactory
       .update($state.params, vm.user)
       .$promise
-      .then(() => {
-        $state.go('usersShow', $state.params); // go to users profile once their profile has been updated. from router config
-      });
+      .then(() => $state.go('usersShow', $state.params)); //this
   }
+
 }

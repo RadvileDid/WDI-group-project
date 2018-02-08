@@ -15,6 +15,7 @@
       <a href="moviesIndex" class="brand-logo">Movie Hub</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a ui-sref="moviesIndex">Movies</a></li>
+        <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">Profile</a></li>
         <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">My Profile</a></li>
         <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
         <li><a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a></li>
@@ -23,7 +24,32 @@
     </div>
   </nav>
 
+<<<<<<< HEAD
   <main ui-view>
+=======
+
+  <div class="field">
+    <label class="label">Profile Picture</label>
+    <div class="control">
+      <div class="file">
+        <label class="file-label">
+          <input class="file-input" type="file" ng-model="vm.newUser.image" upload-image>
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fa fa-upload"></i>
+            </span>
+            <span class="file-label">
+              Choose a file…
+            </span>
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+  <main class="container" ui-view>
+>>>>>>> development
     <div class="col s12 m7">
       <div class="card horizontal">
         <div class="card-image">
@@ -42,7 +68,7 @@
               </div>
               <div class="field">
                 <label class="label" for="password">Password</label>
-                <input class="input" type="password" name="password" id="password" ng-model="vm.credentials.password" ng-minlength=5 g-maxlength=20 required>
+                <input class="input" type="password" name="password" id="password" ng-model="vm.credentials.password" ng-minlength="5" g-maxlength="20" required>
                 <div class="error" ng-show="form.password.$dirty && form.password.$invalid">
                   <small class="error" ng-show="form.password.$error.required">Your email is required.</small>
                   <small class="error" ng-show="form.password.$error.minlength">Your passwordConfirmation is required to be at least 5 characters</small>

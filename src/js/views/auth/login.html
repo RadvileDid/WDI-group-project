@@ -12,7 +12,7 @@
         </div>
         <div class="field">
           <label class="label" for="password">Password</label>
-            <input class="input" type="password" name="password" id="password" ng-model="vm.credentials.password" ng-minlength=5 g-maxlength=20 required>
+            <input class="input" type="password" name="password" id="password" ng-model="vm.credentials.password" ng-minlength="5" g-maxlength="20" required>
             <div class="error" ng-show="form.password.$dirty && form.password.$invalid">
               <small class="error" ng-show="form.password.$error.required">Your email is required.</small>
               <small class="error" ng-show="form.password.$error.minlength">Your passwordConfirmation is required to be at least 5 characters</small>
