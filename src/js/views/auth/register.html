@@ -36,26 +36,19 @@
           </div>
         </div>
 
-
-
-        <!-- <label class="file-label">
-        <input class="file-input" type="file" ng-model="vm.user.profilePicture" upload-image>
-      </label> -->
-
-
-
-
-
-
       <div>
-        <label class="label" for="profilePicture">Profile picture URL</label>
-        <input type="file" class="file-input" name="profilePicture" id="profilePicture" ng-model="vm.user.profilePicture" required>
+        <label class="label" for="profilePicture">Profile picture</label>
+        <input type="file" name="profilePicture" id="profilePicture" ng-model="vm.user.profilePicture" upload-image required>
         <div class="error" ng-show="form.profilePicture.$dirty && form.profilePicture.$invalid">
           <small class="error" ng-show="form.profilePicture.$error.required">Your profile picture URL is required.</small>
         </div>
       </div>
-      
+
+      <div ng-if="vm.user.profilePicture">
+        <img class="preview-image" src="{{ vm.user.profilePicture}}">
+      </div>
       <div>
+
         <label class="label" for="quote">Favourite movie quote</label>
         <input type="text" class="input" name="quote" id="quote" ng-model="vm.user.quote" ng-minlength="5" required>
         <div class="error" ng-show="form.quote.$dirty && form.quote.$invalid">

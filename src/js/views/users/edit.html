@@ -21,51 +21,55 @@
         </div>
         <div>
           <label class="label" for="profilePicture">Profile picture URL</label>
-          <input type="text" class="input" name="profilePicture" id="profilePicture" ng-model="vm.user.profilePicture" required>
+          <input type="file" class="input" name="profilePicture" id="profilePicture" ng-model="vm.user.profilePicture" upload-image required>
           <div class="error" ng-show="form.profilePicture.$dirty && form.profilePicture.$invalid">
             <small class="error" ng-show="form.profilePicture.$error.required">Your profile picture URL is required.</small>
           </div>
-        </div>
-        <div>
-          <label class="label" for="quote">Favourite movie quote</label>
-          <input type="text" class="input" name="quote" id="quote" ng-model="vm.user.quote" ng-minlength="5" required>
-          <div class="error" ng-show="form.quote.$dirty && form.quote.$invalid">
-            <small class="error" ng-show="form.quote.$error.required">Your favourite movie quote is required.</small>
-            <small class="error" ng-show="form.quote.$error.minlength">Movie quote is required to be at least 5 characters</small>
+
+          <div ng-if="vm.user.profilePicture">
+            <img class="preview-image" src="{{ vm.user.profilePicture}}">
           </div>
-        </div>
-        <div>
-          <label class="label" for="genre">Favourite movie genre</label>
-          <select id="genre" type="text" ng-model="vm.user.genre" name="genre"  required class="browser-default">
-            <option value="" disable>Choose a genre</option>
-            <option>Action</option>
-            <option>Adventure</option>
-            <option>Animation</option>
-            <option>Comedy</option>
-            <option>Crime</option>
-            <option>Documentary</option>
-            <option>Drama</option>
-            <option>Family</option>
-            <option>Fantasy</option>
-            <option>History</option>
-            <option>Horror</option>
-            <option>Music</option>
-            <option>Mystery</option>
-            <option>Romance</option>
-            <option>Science</option>
-            <option>Fiction</option>
-            <option>Thriller</option>
-            <option>War</option>
-            <option>Western</option>
-          </select>
-          <div class="error" ng-show="(form.genre.$touched || form.$submitted) && form.genre.$invalid">
-            <small class="error" ng-show="form.genre.$error.required">Favourite movie genre is required.</small>
+
+          <div>
+            <label class="label" for="quote">Favourite movie quote</label>
+            <input type="text" class="input" name="quote" id="quote" ng-model="vm.user.quote" ng-minlength="5" required>
+            <div class="error" ng-show="form.quote.$dirty && form.quote.$invalid">
+              <small class="error" ng-show="form.quote.$error.required">Your favourite movie quote is required.</small>
+              <small class="error" ng-show="form.quote.$error.minlength">Movie quote is required to be at least 5 characters</small>
+            </div>
           </div>
-        </div>
-        <div class="field center-align">
-          <input type="submit" class="btn formBtn" value="Update" ng-disabled="form.$invalid">
-        </div>
-      </form>
+          <div>
+            <label class="label" for="genre">Favourite movie genre</label>
+            <select id="genre" type="text" ng-model="vm.user.genre" name="genre"  required class="browser-default">
+              <option value="" disable>Choose a genre</option>
+              <option>Action</option>
+              <option>Adventure</option>
+              <option>Animation</option>
+              <option>Comedy</option>
+              <option>Crime</option>
+              <option>Documentary</option>
+              <option>Drama</option>
+              <option>Family</option>
+              <option>Fantasy</option>
+              <option>History</option>
+              <option>Horror</option>
+              <option>Music</option>
+              <option>Mystery</option>
+              <option>Romance</option>
+              <option>Science</option>
+              <option>Fiction</option>
+              <option>Thriller</option>
+              <option>War</option>
+              <option>Western</option>
+            </select>
+            <div class="error" ng-show="(form.genre.$touched || form.$submitted) && form.genre.$invalid">
+              <small class="error" ng-show="form.genre.$error.required">Favourite movie genre is required.</small>
+            </div>
+          </div>
+          <div class="field center-align">
+            <input type="submit" class="btn formBtn" value="Update" ng-disabled="form.$invalid">
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>

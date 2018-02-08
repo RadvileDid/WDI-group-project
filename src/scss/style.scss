@@ -38,7 +38,7 @@ select {
 }
 
 div {
-  &.error{
+  &.error {
     background: #fff0f4;
     color: #c51244;
     padding: 5px 10px;
@@ -46,13 +46,13 @@ div {
   }
 }
 
-.formBtn{
+.formBtn {
   margin: 15px 0;
 }
 
 
-file-input{ //this
-  &.input{
+input {
+  &.input {
     &.ng-valid {
       border-bottom: 1px solid green;
     }
@@ -67,6 +67,19 @@ file-input{ //this
   align-self: center;
 }
 
-.movie-search{
-  margin:20px 0 40px;
+.movie-search {
+  margin: 20px 0 40px;
+}
+
+.preview-image {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.no {
+  font: white;
+}
+
+input[type='file'] { //hacki
+  color: transparent;
 }
