@@ -12,9 +12,17 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
+  <!-- "jumbotron" -->
+  <!-- <div class="new-nav">
+    <a href="moviesIndex"><img class="landing-page-image" ng-src="images/camera.svg" alt="svg of an old film projector"></a>
+    <a href="moviesIndex" class="brand-logo">Movie Hub</a>
+    <span class="brand-logo">A social hub for movie fans!</span>
+  </div> -->
   <!-- navbar -->
   <nav class="nav-extended stroke">
     <div class="nav-wrapper">
+      <a href="moviesIndex"><img class="landing-page-image" ng-src="images/camera.svg" alt="svg of an old film projector"></a>
+      <a href="moviesIndex" class="brand-logo">Movie Hub</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a ui-sref="home">Movies</a></li>
         <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">My Profile</a></li>
@@ -24,12 +32,6 @@
       </ul>
     </div>
   </nav>
-  <!-- "jumbotron" -->
-  <div class="new-nav">
-    <a href="moviesIndex"><img class="landing-page-image" ng-src="images/camera.svg" alt="svg of an old film projector"></a>
-    <a href="moviesIndex" class="brand-logo">Movie Hub</a>
-    <span class="brand-logo">A social hub for movie fans!</span>
-  </div>
   <!-- main content -->
   <main ui-view></main>
 

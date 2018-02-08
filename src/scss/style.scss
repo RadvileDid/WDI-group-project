@@ -30,15 +30,14 @@ div {
     background-color: #5b6061;
   }
   &.new-nav {
-    background-color: #F7F7F7;
+    background-color: #5b6061;
   }
   a {
     &.brand-logo{
       font-family: 'Courgette', cursive;
-      font-size: 45px;
       color: #ffb000f5;
-      font-size: 50px;
-      margin: 15px;
+      font-size: 35px;
+      margin: 10px;
     }
   }
 }
@@ -177,10 +176,9 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 // images
 img {
   &.landing-page-image {
-    margin-top: 25px;
-    margin-left: 20px;
-    margin-bottom: -9px;
-    width: 8%;
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 4%;
     height: auto;
   }
   &.show-page-image {
@@ -200,6 +198,10 @@ img {
 //movies show page
 .movie-search{
   background-color: lighten(#5b6061, 15%);
+}
+
+.search-bar {
+  margin-top: 20px;
 }
 
 .movieCard{
