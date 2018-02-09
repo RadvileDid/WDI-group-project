@@ -1,0 +1,33 @@
+
+
+<div class="container">
+
+
+  <!-- search for a movie -->
+
+  <nav>
+    <div class="nav-wrapper search-bar">
+      <form ng-submit="vm.findMovie()">
+        <div class="input-field movie-search">
+          <input id="search" type="search" required ng-model="vm.search">
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+  <!-- Movies start here -->
+  <div class="row cardSpacing">
+    <div ng-repeat="movie in vm.all">
+      <a ui-sref="movieShow({ id: movie.id })">
+        <div class="col l4 m6 s12">
+          <div class="card movieCard">
+            <img ng-src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path}}" on-error="https://www.bathroomcity.co.uk/sites/default/files/default_images/no_image_available_2.png" alt="Movie poster not available" class="responsive-img">
+            <h5 class="titleSize center-align truncate">{{ movie.title }}</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
