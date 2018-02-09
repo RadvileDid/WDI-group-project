@@ -19,13 +19,13 @@ Only the comment owner can delete the comment
 User can also edit and delete the profile
 
 ### Draft wireframes:
-<a href="https://imgur.com/80Xs15S"><img src="https://i.imgur.com/80Xs15S.jpg" title="source: imgur.com" /></a>
+<a style="width: 100px; height: auto;" href="https://imgur.com/80Xs15S"><img src="https://i.imgur.com/80Xs15S.jpg" title="source: imgur.com" /></a>
 
 ### Working on user story:
 <a href="https://imgur.com/rSPZLPF"><img src="https://i.imgur.com/rSPZLPF.jpg" title="source: imgur.com" /></a>
 
 ### Group work
-Workflow planning:
+#### Workflow planning:
 <a href="https://imgur.com/KQRYFbe"><img src="https://i.imgur.com/KQRYFbe.jpg" title="source: imgur.com" /></a>
 
 ### Trello board:
