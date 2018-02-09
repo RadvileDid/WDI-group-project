@@ -36,7 +36,7 @@
 
         <div>
           <label class="label" for="profilePicture">Profile picture</label>
-          <input type="file" name="profilePicture" id="profilePicture" ng-model="vm.user.profilePicture" upload-image required>
+          <input type="file" class="input" name="profilePicture" id="profilePicture" ng-model="vm.user.profilePicture" upload-image required>
           <div class="error" ng-show="form.profilePicture.$dirty && form.profilePicture.$invalid">
             <small class="error" ng-show="form.profilePicture.$error.required">Your profile picture URL is required.</small>
           </div>
