@@ -131,6 +131,16 @@ label {
   color: lighten(#5b6061, 15%);
 }
 
+// movie show page/group
+
+div {
+  &.section {
+    &.movie-chat {
+      margin: -60px;
+    }
+  }
+}
+
 //buttons
 
 button {
@@ -144,6 +154,9 @@ button {
     }
     &:hover {
       background-color: darken(#5b6061, 2%);
+    }
+    &.join-comment {
+      margin-top: 30px;
     }
   }
   // this may not be working, must test
