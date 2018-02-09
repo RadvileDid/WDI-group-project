@@ -30,7 +30,8 @@ Workflow planning:
 
 ### Trello board:
 <a href="https://imgur.com/dyGSyzU"><img src="https://i.imgur.com/dyGSyzU.png" title="source: imgur.com" /></a>
-Technologies used:
+
+### Technologies used:
 * Angular
 * Javascript ES6
 * HTML5
