@@ -80,7 +80,7 @@ div {
   &.profile-image{
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
   }
   &.profile-page{
     padding-top: 20px;
@@ -111,6 +111,10 @@ input{
       border-bottom: 1px solid green;
     }
   }
+}
+
+input[type='file'] {
+  color: transparent;
 }
 
 .formSpacing {
