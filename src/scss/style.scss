@@ -45,7 +45,7 @@ div {
   a {
     &.brand-logo{
       font-family: 'Courgette', cursive;
-      color: #ffb000f5;
+      color: color: rgba(255, 176, 0, 0.9607843137254902) !important;
       font-size: 35px;
       margin: 10px;
     }
@@ -67,7 +67,7 @@ nav.fill ul li a:after {
   width: 0%;
   content: '.';
   color: transparent;
-  background: #ffb000f5;
+  background: color: rgba(255, 176, 0, 0.9607843137254902) !important;
   height: 3px;
 }
 
