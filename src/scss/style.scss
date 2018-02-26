@@ -1,7 +1,8 @@
 body{
   background-color: #F7F7F7;
-  font-family: 'Open Sans', sans-serif;
-  color: #5b6061;
+  font-family: 'Playfair Display', serif;
+  // color: #5b6061;
+  font-size: 15px;
 }
 
 p {
@@ -11,11 +12,6 @@ p {
 span {
   font-weight: 600;
   font-size: 16px;
-  &.brand-logo{
-    font-family: 'Courgette', cursive;
-    color: #ffb000f5;
-    font-size: 30px;
-  }
 }
 
 
@@ -27,27 +23,25 @@ select {
   margin-top: 10px;
 }
 
-label {
-  &.label-icon{
-    margin-top: -10px;
-  }
-}
 
 //navbar
 
 div {
   &.nav-wrapper{
-    background-color: #5b6061;
+    background-color: black;
   }
   &.new-nav {
-    background-color: #5b6061;
+    background-color: black;
   }
   a {
     &.brand-logo{
-      font-family: 'Courgette', cursive;
-      color: rgba(255, 176, 0, 0.9607843137254902) !important;
-      font-size: 35px;
-      margin: 10px;
+      font-size: 20px;
+      margin-left: 15px;
+      & i{
+        &.fa-film{
+          color: red;
+        }
+      }
     }
   }
 }
@@ -67,7 +61,7 @@ nav.fill ul li a:after {
   width: 0%;
   content: '.';
   color: transparent;
-  background: rgba(255, 176, 0, 0.9607843137254902) !important;
+  background: red !important;
   height: 3px;
 }
 
@@ -126,109 +120,50 @@ textarea {
   border: none;
 }
 
-label {
-  font-size: 15px;
-  color: lighten(#5b6061, 15%);
-}
 
 // movie show page/group
 
-div {
-  &.section {
-    &.movie-chat {
-      margin: -60px;
-    }
-  }
-}
+// div {
+//   &.section {
+//     &.movie-chat {
+//       margin: -60px;
+//     }
+//   }
+// }
 
-//buttons
-
-button {
-  &.btn{
-    background-color: lighten(#5b6061, 25%);
-    &:focus {
-      background-color: lighten(#5b6061, 5%);
-      border-bottom: 1px solid lighten(#5b6061, 5%);
-      -webkit-box-shadow: 0 1px 0 0 lighten(#5b6061, 5%);
-      box-shadow: 0 1px 0 0 lighten(#5b6061, 5%);
-    }
-    &:hover {
-      background-color: darken(#5b6061, 2%);
-    }
-    &.join-comment {
-      margin-top: 30px;
-    }
-  }
-  // this may not be working, must test
-  &.btn-large {
-    background-color: darken(#5b6061, 2%);
-  }
-  &.btn-large:hover {
-    background-color: darken(#5b6061, 2%);
-  }
-}
-
-.btn:hover, .btn-large:hover {
-  background-color: darken(#5b6061, 2%);
-}
-
-input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid lighten(#5b6061, 15%);
-  -webkit-box-shadow: 0 1px 0 0 lighten(#5b6061, 15%);
-  box-shadow: 0 1px 0 0 lighten(#5b6061, 15%);
-}
-
-.btn, .btn-large {
-    text-decoration: none;
-    color: #fff;
-    background-color: darken(#5b6061, 2%);
-    text-align: center;
-    letter-spacing: .5px;
-    -webkit-transition: .2s ease-out;
-    transition: .2s ease-out;
-    cursor: pointer;
-}
 
 .delete-button {
-  margin: 8px;
-  background-color: #c51244;
+  background-color: #af1c37;
   color: white;
-  border-radius: 4px;
+  font-size: 10px;
+  padding: 0 10px;
+  margin-left: 10px;
+  &:hover {
+    background-color: #c51244;
+  }
 }
 
 .user-group {
   display: inline-block;
 }
 
-// images
-img {
-  &.landing-page-image {
-    margin-top: 15px;
-    margin-left: 10px;
-    width: 4%;
-    height: auto;
-  }
-  &.show-page-image {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  &.magnifying-glass {
-    padding-top: 3px;
-    width: 60%;
-  }
-  &.preview-image {
-    max-width: 150px;
-    max-height: 150px;
+input {
+  &#search{
+    width: 95%;
+    color: grey;
+    text-align: center;
+    font-size: 16px;
   }
 }
 
-//movies show page
-.movie-search{
-  background-color: lighten(#5b6061, 15%);
+.searchBar {
+  margin: 15px auto;
+  width: 85%;
 }
 
-.search-bar {
-  margin-top: 20px;
+.fa-search{
+  margin-left: 10px;
+  margin-top: 5px;
 }
 
 .movieCard{
@@ -257,9 +192,35 @@ img {
 }
 
 blockquote{
-  border-left:5px solid #ffb000f5;
+  border-left:5px solid red;
 }
 
-.movie-info { //not working
-  font-weight: 100;
+.rightElement{
+  padding: 0 10px;
+}
+
+img {
+  &.responsive-img {
+    margin-top: 20px;
+  }
+}
+
+div {
+  &.movieCard {
+    img {
+      margin-top: 0;
+    }
+  }
+}
+
+.bigText {
+  font-size: 18px;
+}
+
+.test {
+  margin-top: 10px;
+}
+
+.commentDate{
+  font-size: 13px;
 }
